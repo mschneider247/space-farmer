@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { getRocketData } from '../../apiCalls/apiCalls';
+import Welcome from '../Welcome/Welcome'
 
 class App extends Component {
   constructor() {
@@ -30,6 +31,7 @@ class App extends Component {
 
     return (
       <main>
+        <Welcome />
         <h1>SPACE FARMER</h1>
         <p>Rocket Stuff:</p>
         {rockets}
