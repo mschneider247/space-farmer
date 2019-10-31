@@ -9,6 +9,10 @@ export default class Welcome extends Component {
     }
   }
 
+  updateName = event => {
+    this.setState({ [event.target.name]: event.target.value})
+  }
+
   render() {
     return (
       <div className="div_welcome">
@@ -16,7 +20,12 @@ export default class Welcome extends Component {
         <h5>For some reason, everyone agrees you are The Farmer.</h5>
         <h5>The Farmer is you.</h5>
         <div className="div_name-input">
-          <input type="text" placeholder="Enter Your Name"/>
+          <input 
+            name="name" 
+            type="text" 
+            placeholder="Enter Your Name"
+            onChange={this.updateName}
+          />
           <button>Start Farming!</button>
         </div>
       </div>
