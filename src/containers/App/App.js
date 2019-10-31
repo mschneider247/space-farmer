@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getRocketData } from './apiCalls';
+import { getRocketData } from '../../apiCalls/apiCalls';
 
 class App extends Component {
   constructor() {
