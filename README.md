@@ -1,3 +1,16 @@
+# There is a brand new space station somewhere in space... and it needs a farmer.
+# For some reason, everyone agrees you are The Farmer.
+# The Farmer is you.
+
+## You choose what to bring along!
+## Dirt, tractors, hoes, seeds?
+## Pick a rocket to ride on!
+## Pick a destination!
+
+## You will need x number of rockets.  The total cost of your trip will be $$$ . cost break down---
+## Your proposal has been rejected....
+## You are the Farmer, we believe in you, try again.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
