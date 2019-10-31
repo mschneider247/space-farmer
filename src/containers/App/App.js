@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getRocketData } from './apiCalls';
+import { getRocketData } from '../../apiCalls/apiCalls';
+import Welcome from '../Welcome/Welcome'
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -30,6 +32,12 @@ class App extends Component {
 
     return (
       <main>
+        <Route path="/"
+        render ={() => {
+          return (
+            <Welcome />
+          )
+        }}/>
         <h1>SPACE FARMER</h1>
         <p>Rocket Stuff:</p>
         {rockets}

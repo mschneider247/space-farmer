@@ -1,0 +1,31 @@
+.div_welcome {
+  border: 2px solid grey;
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+  align-items: center;
+}
+
+.div_name-input {
+  width: 310px;
+}
+
+input {
+  text-align: center;
+  width: 300px;
+  margin-bottom: 3%;
+}
+
+button {
+  width: 305px;
+}
+
+input, button {
+  height: 40px;
+  border-radius: 2%;
+}
+
+button:hover {
+  background-color: green;
+  color: white;
+}
