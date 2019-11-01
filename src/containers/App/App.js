@@ -4,6 +4,7 @@ import { getRocketData } from '../../apiCalls/apiCalls';
 import Welcome from '../Welcome/Welcome'
 import Nav from '../Nav/Nav'
 import { Route } from 'react-router-dom';
+import ProposalContainer from '../ProposalContainer/ProposalContainer';
 
 class App extends Component {
   constructor() {
@@ -42,7 +43,10 @@ class App extends Component {
         <Route path="/proposals"
         render = {() => {
           return (
-            <Nav />
+            <>
+              <Nav />
+              <ProposalContainer />
+            </>
           )
         }}/>
       </main>
