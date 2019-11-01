@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './Welcome.css'
 import { setUser } from '../../actions';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 export class Welcome extends Component {
   constructor() {
@@ -15,13 +16,24 @@ export class Welcome extends Component {
     this.setState({ [event.target.name]: event.target.value})
   }
 
+  handleClick = async () => {
+    await this.props.setUser(this.state.name)
+  }
+
+  checkLogin = () => {
+    console.log("here", this.props)
+    if (this.props.user !== "") {
+      return (
+        <Redirect to='/proposals'></Redirect>
+      )
+    }
+  }
+
   render() {
-    console.log("this.props.setUser", this.props.setUser)
+    let reRoute = this.checkLogin();
     return (
       <div className="div_welcome">
-        <h5>There is a brand new space station somewhere in space... and it needs a farmer.</h5>
-        <h5>For some reason, everyone agrees you are The Farmer.</h5>
-        <h5>Space Farmer is you.</h5>
+        <h1>You are the SPACE FARMER</h1>
         <div className="div_name-input">
           <input 
             name="name" 
@@ -29,8 +41,9 @@ export class Welcome extends Component {
             placeholder="Enter Your Name"
             onChange={this.updateName}
           />
-          <button onClick={() => this.props.setUser(this.state.name)}>Start Farming!</button>
+          <button onClick={() => this.handleClick()}>Start Farming!</button>
         </div>
+        {reRoute}
       </div>
     )
   }
@@ -40,4 +53,8 @@ export const mapDispatchToProps = dispatch => ({
   setUser: userName => dispatch(setUser(userName))
 })
 
-export default connect(null, mapDispatchToProps)(Welcome)
+export const mapStateToProps = state => ({
+  user: state.setUser
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Welcome)
