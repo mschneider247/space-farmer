@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { getRocketData } from '../../apiCalls/apiCalls';
 import Welcome from '../Welcome/Welcome'
+import Nav from '../Nav/Nav'
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -32,10 +33,16 @@ class App extends Component {
 
     return (
       <main>
-        <Route path="/"
+        <Route exact path="/"
         render ={() => {
           return (
             <Welcome />
+          )
+        }}/>
+        <Route path="/proposals"
+        render = {() => {
+          return (
+            <Nav />
           )
         }}/>
         <h1>SPACE FARMER</h1>

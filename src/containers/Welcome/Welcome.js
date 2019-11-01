@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './Welcome.css'
 import { setUser } from '../../actions';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export class Welcome extends Component {
   constructor() {
@@ -15,13 +16,15 @@ export class Welcome extends Component {
     this.setState({ [event.target.name]: event.target.value})
   }
 
+  handleClick = async () => {
+    await this.props.setUser(this.state.name)
+  }
+
   render() {
     console.log("this.props.setUser", this.props.setUser)
     return (
       <div className="div_welcome">
-        <h5>There is a brand new space station somewhere in space... and it needs a farmer.</h5>
-        <h5>For some reason, everyone agrees you are The Farmer.</h5>
-        <h5>Space Farmer is you.</h5>
+        <h1>You are the SPACE FARMER</h1>
         <div className="div_name-input">
           <input 
             name="name" 
@@ -29,7 +32,7 @@ export class Welcome extends Component {
             placeholder="Enter Your Name"
             onChange={this.updateName}
           />
-          <button onClick={() => this.props.setUser(this.state.name)}>Start Farming!</button>
+          <Link to='/proposals'><button onClick={() => this.handleClick()}>Start Farming!</button></Link>
         </div>
       </div>
     )
