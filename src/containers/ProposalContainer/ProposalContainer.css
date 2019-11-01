@@ -1,0 +1,14 @@
+.space-background {
+  background-image: url('../../images/spacefarm.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 600px;
+}
+
+.section_create {
+  text-align: center;
+}
+
+.create_btn {
+  margin-top: 5%;
+}
