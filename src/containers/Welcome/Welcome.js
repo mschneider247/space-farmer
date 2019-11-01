@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Welcome.css'
 import { setUser } from '../../actions';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 export class Welcome extends Component {
   constructor() {
@@ -20,8 +20,17 @@ export class Welcome extends Component {
     await this.props.setUser(this.state.name)
   }
 
+  checkLogin = () => {
+    console.log("here", this.props)
+    if (this.props.user !== "") {
+      return (
+        <Redirect to='/proposals'></Redirect>
+      )
+    }
+  }
+
   render() {
-    console.log("this.props.setUser", this.props.setUser)
+    let reRoute = this.checkLogin();
     return (
       <div className="div_welcome">
         <h1>You are the SPACE FARMER</h1>
@@ -32,8 +41,9 @@ export class Welcome extends Component {
             placeholder="Enter Your Name"
             onChange={this.updateName}
           />
-          <Link to='/proposals'><button onClick={() => this.handleClick()}>Start Farming!</button></Link>
+          <button onClick={() => this.handleClick()}>Start Farming!</button>
         </div>
+        {reRoute}
       </div>
     )
   }
@@ -43,4 +53,8 @@ export const mapDispatchToProps = dispatch => ({
   setUser: userName => dispatch(setUser(userName))
 })
 
-export default connect(null, mapDispatchToProps)(Welcome)
+export const mapStateToProps = state => ({
+  user: state.setUser
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Welcome)

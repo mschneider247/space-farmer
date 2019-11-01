@@ -45,9 +45,6 @@ class App extends Component {
             <Nav />
           )
         }}/>
-        <h1>SPACE FARMER</h1>
-        <p>Rocket Stuff:</p>
-        {rockets}
       </main>
     )
   }
