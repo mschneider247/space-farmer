@@ -21,7 +21,6 @@ export class Welcome extends Component {
   }
 
   checkLogin = () => {
-    console.log("here", this.props)
     if (this.props.user !== "") {
       return (
         <Redirect to='/proposals'></Redirect>
