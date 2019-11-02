@@ -5,7 +5,7 @@ export const Overview = () => {
   return (
     <>
       <h1>Overview</h1>
-      <Link path='/proposals'><button >Continue</button></Link>
+      <Link to='/proposals'><button >Continue</button></Link>
     </>
   )
 };

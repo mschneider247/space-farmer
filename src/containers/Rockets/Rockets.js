@@ -5,7 +5,7 @@ export const Rockets = () => {
   return (
     <>
       <h1>Rockets!</h1>
-      <Link path='/overview'><button >Continue</button></Link>
+      <Link to='/overview'><button >Continue</button></Link>
     </>
   )
 };

@@ -16,7 +16,8 @@ export class Welcome extends Component {
     this.setState({ [event.target.name]: event.target.value})
   }
 
-  handleClick = async () => {
+  handleClick = async (event) => {
+    event.stopPropagation();
     await this.props.setUser(this.state.name)
   }
 
@@ -40,7 +41,7 @@ export class Welcome extends Component {
             placeholder="Enter Your Name"
             onChange={this.updateName}
           />
-          <button onClick={() => this.handleClick()}>Start Farming!</button>
+          <button onClick={(event) => this.handleClick(event)}>Start Farming!</button>
         </div>
         {reRoute}
       </div>
