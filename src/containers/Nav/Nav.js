@@ -20,7 +20,7 @@ export const Nav = (props) => {
   return (
     <nav>
       {checkLogin()}
-      <h1>SPACE FARMER</h1>
+      <h1>SPACE <span className="farmer">FARMER</span></h1>
       <div className="div_welcome-logout">
         <p>Welcome! {props.user}</p>
         <button className="nav_logout-btn" onClick={() => handleClick()}>Log Out</button>
