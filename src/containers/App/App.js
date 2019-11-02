@@ -3,7 +3,8 @@ import './App.css';
 import { getRocketData } from '../../apiCalls/apiCalls';
 import Welcome from '../Welcome/Welcome'
 import Nav from '../Nav/Nav'
-import { Route } from 'react-router-dom';
+import Supplies from '../Supplies/Supplies'
+import { Route, Switch } from 'react-router-dom';
 import ProposalContainer from '../ProposalContainer/ProposalContainer';
 
 class App extends Component {
@@ -34,21 +35,32 @@ class App extends Component {
 
     return (
       <main>
-        <Route exact path="/"
-        render ={() => {
-          return (
-            <Welcome />
-          )
-        }}/>
-        <Route path="/proposals"
-        render = {() => {
-          return (
-            <>
-              <Nav />
-              <ProposalContainer />
-            </>
-          )
-        }}/>
+        <Switch>
+          <Route exact path="/"
+          render ={() => {
+            return (
+              <Welcome />
+            )
+          }}/>
+          <Route path="/proposals"
+          render = {() => {
+            return (
+              <>
+                <Nav />
+                <ProposalContainer />
+              </>
+            )
+          }}/>
+          <Route path="/supplies"
+          render = {() => {
+            return (
+              <>
+                <Nav />
+                <Supplies />
+              </>
+            )
+          }}/>
+        </Switch>
       </main>
     )
   }
