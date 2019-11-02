@@ -12,7 +12,7 @@ export const Nav = (props) => {
   const checkLogin = () => {
     if (props.user === ""){
       return (
-        <Redirect path='/'></Redirect>
+        <Redirect to='/'></Redirect>
       )
     }
   }
