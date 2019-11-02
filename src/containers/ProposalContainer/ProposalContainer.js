@@ -33,7 +33,6 @@ export class ProposalContainer extends Component {
   render() {
     return (
       <section>
-      {console.log(this.state.newProposal)}
       {this.checkProposalCreation()}
         <section className="space-background">
           {/* <article>
