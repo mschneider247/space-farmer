@@ -1,4 +1,6 @@
 nav {
+  margin-left: 5%;
+  margin-bottom: 4%;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -8,9 +10,17 @@ nav {
 .div_welcome-logout {
   text-align: center;
   width: 200px;
-  margin-right: 10%;
+  margin-right: 12%;
 }
 
 .nav_logout-btn {
   width: 200px;
+}
+
+.farmer {
+  color: green;
+}
+
+button {
+  border-radius: 30px;
 }

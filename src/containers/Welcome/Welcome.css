@@ -25,6 +25,11 @@ input, button {
   border-radius: 2%;
 }
 
+input {
+  color: white;
+  border: 1px solid white;
+}
+
 button:hover {
   background-color: green;
   color: white;
