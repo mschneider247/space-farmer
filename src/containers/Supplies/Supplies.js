@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import connect from 'react-redux';
+import { connect } from 'react-redux';
 import './Supplies.css';
+import { addSupplies } from '../../actions'
 import tonka from '../../images/tonka.jpg';
 import mule from '../../images/mule.jpg';
 import combine from '../../images/combine.jpg';
@@ -51,7 +52,9 @@ export class Supplies extends Component {
   }
 
   handleSubmit = () => {
-    console.log("Supplies wants to submit data to proposal object...")
+    let totalCost = this.state.tractorCost + this.state.dirtCost + this.state.hoeCost + this.state.seedCost;
+    let totalWeight = this.state.tractorWeight + this.state.dirtWeight + this.state.hoeWeight + this.state.seedWeight;
+    this.props.addSupplies({supplyCost: totalCost, supplyWeight: totalWeight})
   }
 
   render() {
@@ -159,8 +162,8 @@ export class Supplies extends Component {
   }
 };
 
-export const mapDispatchtoProps = ({
-  
+export const mapDispatchtoProps = dispatch => ({
+  addSupplies: (supplies) => dispatch(addSupplies(supplies))
 })
 
-export default Supplies;
+export default connect(null, mapDispatchtoProps)(Supplies);

@@ -13,7 +13,12 @@ export const addProposal = proposal => ({
   proposal
 })
 
-export const setData = data => ({
-  type: 'SET_DATA',
+export const addSupplies = supplies => ({
+  type: 'ADD_SUPPLIES',
+  supplies
+})
+
+export const setRockets = data => ({
+  type: 'SET_ROCKETS',
   data
 })
