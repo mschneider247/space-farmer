@@ -1,0 +1,5 @@
+.tractors {
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-between;
+}
