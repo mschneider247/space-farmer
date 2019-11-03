@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { getRocketData } from '../../apiCalls/apiCalls';
+import { connect } from 'react-redux';
 import Welcome from '../Welcome/Welcome';
 import Nav from '../Nav/Nav';
 import Supplies from '../Supplies/Supplies';
@@ -8,19 +9,23 @@ import Rockets from '../Rockets/Rockets';
 import Overview from '../Overview/Overview';
 import { Route, Switch } from 'react-router-dom';
 import ProposalContainer from '../ProposalContainer/ProposalContainer';
+import { setRockets } from '../../actions';
 
 class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      data: undefined
-    }
-  }
 
   async componentDidMount() {
     try {
       const rocketData = await getRocketData();
-      this.setState({ data: rocketData});
+      const cleanRockets = rocketData.map(rocket => {
+        return {
+          id: rocket.id,
+          name: rocket.rocket_name,
+          cost: rocket.cost_per_launch,
+          payloads: rocket.payload_weights,
+          successRate: rocket.success_rate_pct
+        }
+      });
+      this.props.setRockets(cleanRockets);
     } catch ({message}) {
       console.log('Something Broke!', message)
     }
@@ -79,4 +84,8 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapDispatchToProps = dispatch => ({
+  setRockets: rockets => dispatch(setRockets(rockets))
+})
+
+export default connect(null, mapDispatchToProps)(App)
