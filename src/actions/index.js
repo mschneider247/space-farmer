@@ -12,3 +12,8 @@ export const addProposal = proposal => ({
   type: 'ADD_PROPOSAL',
   proposal
 })
+
+export const setData = data => ({
+  type: 'SET_DATA',
+  data
+})
