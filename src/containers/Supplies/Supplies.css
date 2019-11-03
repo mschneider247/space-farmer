@@ -1,5 +1,27 @@
-.tractors, .dirt {
-  margin-left: 10%;
+.tractors, .dirt, .hoes {
+  width: 80%;
+  margin-left: 3%;
   display: flex;
-  justify-content: space-between;
+  border-bottom: 1px solid grey;
+}
+
+h4 {
+  margin-left: 35%;
+}
+
+.supply-btn {
+  margin-top: 1%;
+  margin-left: 30%
+}
+
+.supplies {
+  display: grid;
+}
+
+.supply-card {
+  margin: 1%;
+  padding: 2%;
+  border: 1px solid green;
+  border-radius: 10px;
+  width: 27%;
 }
