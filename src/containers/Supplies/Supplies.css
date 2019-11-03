@@ -1,4 +1,4 @@
-.tractors, .dirt, .hoes {
+.tractors, .dirt, .hoes, .seeds {
   width: 80%;
   margin-left: 3%;
   display: flex;
@@ -10,8 +10,7 @@ h4 {
 }
 
 .supply-btn {
-  margin-top: 1%;
-  margin-left: 30%
+  margin: 5% 0 5% 30%;
 }
 
 .supplies {
@@ -24,4 +23,13 @@ h4 {
   border: 1px solid green;
   border-radius: 10px;
   width: 27%;
+}
+
+.supply-footer {
+  margin-left: 12%;
+  display: flex;
+}
+
+.symbols {
+  color: green;
 }

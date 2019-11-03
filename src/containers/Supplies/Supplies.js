@@ -32,7 +32,15 @@ export class Supplies extends Component {
     this.setState({hoeWeight: weight});
   }
 
+  handleSeed = (cost, weight) => {
+    this.setState({seedCost: cost});
+    this.setState({seedWeight: weight});
+  }
+
   render() {
+    let totalCost = this.state.tractorCost + this.state.dirtCost + this.state.hoeCost + this.state.seedCost;
+    let totalWeight = this.state.tractorWeight + this.state.dirtWeight + this.state.hoeWeight + this.state.seedWeight;
+
     return (
       <section>
         <section>
@@ -43,17 +51,17 @@ export class Supplies extends Component {
             <div className="supply-card">
               <p>Tonka Truck</p>
               <img alt="Tonka Truck" />
-              <input onClick={() => {this.handleTractor(2, 20)}} type="radio" name="tractor" value="tonka" />
+              <input onClick={() => {this.handleTractor(20, 2)}} type="radio" name="tractor" value="tonka" />
             </div>
             <div className="supply-card">
               <p>Mule</p>
               <img alt="Mule" />
-              <input onClick={() => {this.handleTractor(150, 2000)}} type="radio" name="tractor" value="mule" />
+              <input onClick={() => {this.handleTractor(150, 200)}} type="radio" name="tractor" value="mule" />
             </div>
             <div className="supply-card">
               <p>Combine</p>
               <img alt="Combine" />
-              <input onClick={() => {this.handleTractor(150000, 20000)}} type="radio" name="tractor" value="combine" />
+              <input onClick={() => {this.handleTractor(420000, 36000)}} type="radio" name="tractor" value="combine" />
             </div>
           </section>
           <section className="dirt">
@@ -90,8 +98,33 @@ export class Supplies extends Component {
               <input onClick={() => {this.handleHoe(3000, 12)}} type="radio" name="hoes" value="superHoe9000" />
             </div>
           </section>
+          <section className="seeds">
+            <div className="supply-card">
+              <p>Carrot seeds</p>
+              <img alt="carrots" />
+              <input onClick={() => {this.handleSeed(1, 0.5)}} type="radio" name="seeds" value="carrots" />
+            </div>
+            <div className="supply-card">
+              <p>Mixed Fruits and Veggies seed pack</p>
+              <img alt="Fruits and Veggies Pack" />
+              <input onClick={() => {this.handleSeed(10, 1)}} type="radio" name="seeds" value="fruiteAndVeggiesPack" />
+            </div> 
+            <div className="supply-card">
+              <p>Exotic seeds</p>
+              <img alt="Exotic Seeds" />
+              <input onClick={() => {this.handleSeed(100, 2)}} type="radio" name="seeds" value="exoticSeeds" />
+            </div>
+          </section>
         </section>
-        <Link to='/rockets'><button className="supply-btn">Continue</button></Link>
+          <div className="supply-footer">
+            <div>
+              <p>Total Cost: <span className="symbols">$</span> {totalCost}</p>
+              <p>Total Weight: {totalWeight} <span className="symbols">lbs</span></p>
+            </div>
+            <div>
+              <Link to='/rockets'><button className="supply-btn">Continue</button></Link>
+            </div>
+          </div>
       </section>
     )
   }
