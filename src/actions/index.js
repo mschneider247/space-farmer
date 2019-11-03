@@ -1,3 +1,8 @@
+export const setRockets = data => ({
+  type: 'SET_ROCKETS',
+  data
+})
+
 export const setUser = user => ({
   type: 'SET_USER_NAME',
   user
@@ -18,7 +23,7 @@ export const addSupplies = supplies => ({
   supplies
 })
 
-export const setRockets = data => ({
-  type: 'SET_ROCKETS',
-  data
+export const addRocketChoice = rocket => ({
+  type: 'ADD_ROCKET_CHOICE',
+  rocket
 })

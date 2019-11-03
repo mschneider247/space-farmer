@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { addRocketChoice } from '../../actions'
 
 export class Rockets extends Component{
   render() {
@@ -12,4 +14,12 @@ export class Rockets extends Component{
   }
 };
 
-export default Rockets;
+export const mapStateToProps = state => ({
+  proposals: state.proposals
+});
+
+export const mapDispatchToProps = dispatch => ({
+  addRocketChoice: (rocket) => dispatch(addRocketChoice(rocket))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Rockets);
