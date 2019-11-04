@@ -10,6 +10,7 @@ Space Farmer is a web-based game that allows a user to choose farming supplies t
 This application utilizes: create-react-app, react, redux, enzyme & jest, html, css, react router, fetch API, and an unofficial SpaceX API.
 
 ### Installation:
+- Check out the live site here: [live site](https://space-farmer.herokuapp.com/)
 - First fork this repo and clone down your own copy.  
 - Once cloned, run npm install and npm start in your terminal. In your browser visit localhost: 3000.  
 - Enjoy playing the game!
