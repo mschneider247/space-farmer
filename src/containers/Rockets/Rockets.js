@@ -12,12 +12,21 @@ import pluto from '../../images/pluto.png';
 import PropTypes from 'prop-types';
 
 export class Rockets extends Component{
+  constructor() {
+    super();
+    this.state = {
+      destination: '',
+      rocketChoice: ''
+    }
+  }
 
   handleDestination = destination => {
+    this.setState({destination: destination})
     this.props.addDestination(destination)
   }
 
   handleRocket = rocket => {
+    this.setState({rocketChoice: rocket.name})
     this.props.addRocketChoice(rocket)
   }
 
@@ -85,7 +94,11 @@ export class Rockets extends Component{
             : null
           }
         </section>
-        <Link to='/overview'><button >Continue</button></Link>
+        <section className="rocket-footer">
+          <h5>Destination: {this.state.destination}</h5>
+          <h5>Rocket Choice: {this.state.rocketChoice}</h5>
+          {(this.state.destination !== '' && this.state.rocketChoice !== '') ? <Link to='/overview'><button >Continue To Overview</button></Link> : null}
+        </section>
       </>
     )
   }
@@ -93,7 +106,7 @@ export class Rockets extends Component{
 
 export const mapStateToProps = state => ({
   proposals: state.proposals,
-  rockets: state.rockets
+  rockets: state.rockets,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -107,5 +120,7 @@ Rockets.propTypes = {
   proposals: PropTypes.array,
   rockets: PropTypes.array,
   addDestination: PropTypes.func,
-  addRocketChoice: PropTypes.func
+  addRocketChoice: PropTypes.func,
+  destination: PropTypes.string,
+  rocketChoice: PropTypes.string
 }
