@@ -33,7 +33,7 @@ export class ProposalContainer extends Component {
   render() {
     const proposals = this.props.proposals.map(proposal => {
       return (
-        <article>
+        <article className="proposal-card">
           <h3>Proposal# {proposal.id}</h3>
           <h3>PROPOSAL REJECTED</h3>
         </article>
@@ -45,7 +45,9 @@ export class ProposalContainer extends Component {
       {console.log("proposals", proposals)}
       {this.checkProposalCreation()}
         <section className="space-background">
-          {proposals.length === 0 ? <h3>Start a new proposal below!</h3> : proposals}
+          <section className="proposal-container">
+            {proposals.length === 0 ? <h3>Start a new proposal below!</h3> : proposals}
+          </section>
         </section>
         <section className="section_create">
           <button onClick={(event) => this.handleClick(event)} className="create_btn">Create Proposal</button>

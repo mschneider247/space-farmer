@@ -35,7 +35,8 @@ export class Welcome extends Component {
       <div className="div_welcome">
         <h1>You are the SPACE <span className="farmer">FARMER</span></h1>
         <div className="div_name-input">
-          <input 
+          <input
+            className="name-input" 
             name="name" 
             type="text" 
             placeholder="Enter Your Name"
