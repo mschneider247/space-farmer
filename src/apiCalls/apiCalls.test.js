@@ -29,4 +29,12 @@ describe('Get Rocket Data', () => {
     })
     expect(getRocketData()).rejects.toEqual(Error('Something went wrong getting your rockets!  Please try again...'))
   })
+
+  it('Should error if the response is rejected', () => {
+    const error = 'Fetch Rejected'
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(error)
+    })
+    expect(getRocketData()).rejects.toEqual(error)
+  })
 })
