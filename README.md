@@ -15,7 +15,7 @@ This application utilizes: create-react-app, react, redux, enzyme & jest, html, 
 - Enjoy playing the game!
 
 ### ScreenShots:
-![screenshot1](https://user-images.githubusercontent.com/21366524/68156729-915b9e80-ff09-11e9-8eb0-565934704578.jpg)
+![screenshot1](https://user-images.githubusercontent.com/21366524/68160369-e64ee300-ff10-11e9-86fc-b962695fc25b.jpg)
 ![screenshot2](https://user-images.githubusercontent.com/21366524/68156646-7721c080-ff09-11e9-9ce8-13c51fec5f6d.jpg)
 ![screenshot3](https://user-images.githubusercontent.com/21366524/68156756-a1737e00-ff09-11e9-958e-b13faae8d527.jpg)
 
