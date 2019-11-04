@@ -7,9 +7,7 @@ import { addProposalFinalCost } from '../../actions'
 export class Overview extends Component{
 
   numberOfRockets = (currentProposal) => {
-    console.log(currentProposal.rocket.payloads)
     let currentRocketPayload = currentProposal.rocket.payloads.find(payload => payload.id === currentProposal.destination).lb
-    console.log(currentRocketPayload)
     return Math.ceil(currentProposal.supplies.supplyWeight / currentRocketPayload)
   }
 

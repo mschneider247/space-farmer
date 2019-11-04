@@ -15,7 +15,7 @@ import falcon9 from '../../images/falcon9.jpg';
 import falconHeavy from '../../images/falconHeavy.jpg';
 import starship from '../../images/starship.jpg';
 
-class App extends Component {
+export class App extends Component {
 
   async componentDidMount() {
     try {

@@ -33,7 +33,7 @@ export class ProposalContainer extends Component {
   render() {
     const proposals = this.props.proposals.map(proposal => {
       return (
-        <article className="proposal-card">
+        <article className="proposal-card" key={proposal.id}>
           <h3>Proposal# {proposal.id}</h3>
           <h3>Final Cost $$ {proposal.finalCost}</h3>
           <h3 className="red-text">PROPOSAL REJECTED</h3>
@@ -43,7 +43,6 @@ export class ProposalContainer extends Component {
 
     return (
       <section>
-      {console.log("proposals", proposals)}
       {this.checkProposalCreation()}
         <section className="space-background">
           <section className="proposal-container">
