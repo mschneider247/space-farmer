@@ -162,8 +162,8 @@ export class Supplies extends Component {
   }
 };
 
-export const mapDispatchtoProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addSupplies: (supplies) => dispatch(addSupplies(supplies))
 })
 
-export default connect(null, mapDispatchtoProps)(Supplies);
+export default connect(null, mapDispatchToProps)(Supplies);
