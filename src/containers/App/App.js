@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getRocketData } from '../../apiCalls/apiCalls';
+import getRocketData from '../../apiCalls/apiCalls';
 import { connect } from 'react-redux';
 import Welcome from '../Welcome/Welcome';
 import Nav from '../Nav/Nav';
@@ -21,7 +21,7 @@ export class App extends Component {
   async componentDidMount() {
     try {
       const rocketData = await getRocketData();
-      const cleanRockets = rocketData.map(rocket => {
+      const cleanRockets = rocketData.map((rocket) => {
         return {
           id: rocket.id,
           name: rocket.rocket_name,
@@ -104,10 +104,10 @@ export class App extends Component {
 
 export const mapDispatchToProps = dispatch => ({
   setRockets: rockets => dispatch(setRockets(rockets))
-})
+});
 
-export default connect(null, mapDispatchToProps)(App)
+export default connect(null, mapDispatchToProps)(App);
 
 App.propTypes = {
-  setRockets: PropTypes.func
-}
+  setRockets: PropTypes.func,
+};
