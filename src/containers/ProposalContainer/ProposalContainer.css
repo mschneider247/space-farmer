@@ -5,10 +5,29 @@
   min-height: 600px;
 }
 
+.proposal-container {
+  position: fixed;
+  top: 20%;
+  left: 10%;
+  display: flex;
+}
+
+.proposal-card {
+  margin: 1%;
+}
+
+h3 {
+  background-color: transparent;
+}
+
 .section_create {
   text-align: center;
 }
 
 .create_btn {
   margin-top: 5%;
+}
+
+.red-text {
+  color: red;
 }

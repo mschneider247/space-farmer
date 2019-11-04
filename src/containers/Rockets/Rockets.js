@@ -26,7 +26,7 @@ export class Rockets extends Component{
         <div className="rocket-card" key={rocket.id}>
           <img className="rocket_image" src={rocket.image} alt={rocket.name}/>
           <p>{rocket.name}</p>
-          <p>$ {rocket.cost}</p>
+          <p>${rocket.cost}</p>
           <input className="rocket_input" onClick={() =>{this.handleRocket(rocket)}} type="radio" name="chooseRocket" value={rocket.name}/>
         </div>
       )

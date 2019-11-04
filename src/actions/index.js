@@ -32,3 +32,8 @@ export const addDestination = destination => ({
   type: 'ADD_DESTINATION',
   destination
 })
+
+export const addProposalFinalCost = finalCost => ({
+  type: 'FINAL_COST',
+  finalCost
+})
