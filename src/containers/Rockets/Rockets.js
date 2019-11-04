@@ -95,8 +95,12 @@ export class Rockets extends Component{
           }
         </section>
         <section className="rocket-footer">
-          <h5>Destination: {this.state.destination}</h5>
-          <h5>Rocket Choice: {this.state.rocketChoice}</h5>
+          <h3 className="rocket-footer_h3">Destination: 
+            {this.state.destination}
+          </h3>
+          <h3 className = "rocket-footer_h3"> Rocket Choice: 
+            {this.state.rocketChoice}
+          </h3>
           {(this.state.destination !== '' && this.state.rocketChoice !== '') ? <Link to='/overview'><button >Continue To Overview</button></Link> : null}
         </section>
       </>
