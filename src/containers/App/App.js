@@ -10,6 +10,10 @@ import Overview from '../Overview/Overview';
 import { Route, Switch } from 'react-router-dom';
 import ProposalContainer from '../ProposalContainer/ProposalContainer';
 import { setRockets } from '../../actions';
+import falcon1 from '../../images/falcon1.jpg';
+import falcon9 from '../../images/falcon9.jpg';
+import falconHeavy from '../../images/falconHeavy.jpg';
+import starship from '../../images/starship.jpg';
 
 class App extends Component {
 
@@ -22,12 +26,25 @@ class App extends Component {
           name: rocket.rocket_name,
           cost: rocket.cost_per_launch,
           payloads: rocket.payload_weights,
-          successRate: rocket.success_rate_pct
+          successRate: rocket.success_rate_pct,
+          image: this.getRocketImage(rocket.id)
         }
       });
       this.props.setRockets(cleanRockets);
     } catch ({message}) {
       console.log('Something Broke!', message)
+    }
+  }
+
+  getRocketImage = (rocketId) => {
+    if (rocketId === 1) {
+      return falcon1
+    } else if (rocketId === 2) {
+      return falcon9
+    } else if (rocketId === 3) {
+      return falconHeavy
+    } else {
+      return starship
     }
   }
 

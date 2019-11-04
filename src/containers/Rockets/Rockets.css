@@ -1,6 +1,33 @@
-.destinations {
-  width: 800px;
+.destinations, .rockets {
+  width: 1100px;
   margin-left: 3%;
   display: flex;
   border-bottom: 3px solid grey;
+}
+
+.destination-card, .rocket-card {
+  margin: 1%;
+  text-align: center;
+}
+
+.destination-card {
+  margin-top: 10%;
+  width: 160px;
+  height: 300px;
+}
+
+.destination_p {
+  height: 20px;
+}
+
+.rocket-card {
+  width: 220px;
+}
+
+.rocket_image {
+  height: 420px;
+}
+
+.destination_input, .rocket_input {
+  margin-left: 45%;
 }
