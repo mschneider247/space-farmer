@@ -3,11 +3,11 @@ import getRocketData from './apiCalls';
 describe('Get Rocket Data', () => {
   beforeEach(() => {
     const mockRockets = [{ id: 1 }, { id: 2 }];
-    window.fetch = jest.fn().mockImplementation(() => { 
+    window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: true,
         json: () => Promise.resolve({ data: mockRockets }),
-    });
+      });
     });
   });
 

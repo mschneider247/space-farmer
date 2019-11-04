@@ -22,7 +22,10 @@ export const proposals = (state = [], action) => {
     case 'FINAL_COST':
       return state.map((proposal) => {
         return proposal.id === state[state.length - 1].id
-          ? { ...proposal, finalCost: action.finalCost } : proposal;
+          ? {
+            ...proposal,
+            finalCost: action.finalCost,
+          } : proposal;
       });
     default:
       return state;
