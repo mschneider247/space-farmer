@@ -3,6 +3,7 @@ import './Welcome.css'
 import { setUser } from '../../actions';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export class Welcome extends Component {
   constructor() {
@@ -59,3 +60,9 @@ export const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Welcome)
+
+Welcome.propTypes = {
+  name: PropTypes.string,
+  user: PropTypes.string,
+  setUser: PropTypes.func
+}

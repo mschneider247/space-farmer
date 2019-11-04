@@ -15,6 +15,7 @@ import mostdirt from '../../images/mostdirt.jpg';
 import carrots from '../../images/carrots.jpg';
 import variety from '../../images/variety.jpg';
 import exotic from '../../images/exotic.jpg';
+import PropTypes from 'prop-types';
 
 export class Supplies extends Component {
   constructor() {
@@ -167,3 +168,15 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(Supplies);
+
+Supplies.propTypes = {
+  addSupplies: PropTypes.func,
+  tractorCost: PropTypes.number,
+  tractorWeight: PropTypes.number,
+  dirtCost: PropTypes.number,
+  dirtWeight: PropTypes.number,
+  hoeCost: PropTypes.number,
+  hoeWeight: PropTypes.number,
+  seedCost: PropTypes.number,
+  seedWeight: PropTypes.number,
+}

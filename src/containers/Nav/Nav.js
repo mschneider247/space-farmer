@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { setUser } from '../../actions';
 import './Nav.css';
+import PropTypes from 'prop-types';
 
 export const Nav = (props) => {
   const handleClick = () => {
@@ -38,3 +39,8 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);
+
+Nav.propTypes = {
+  user: PropTypes.string,
+  setUser: PropTypes.func
+}

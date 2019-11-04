@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import './Overview.css'
-import { addProposalFinalCost } from '../../actions'
+import './Overview.css';
+import { addProposalFinalCost } from '../../actions';
+import PropTypes from 'prop-types';
 
 export class Overview extends Component{
 
@@ -52,3 +53,8 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Overview);
+
+Overview.propTypes = {
+  proposals: PropTypes.array,
+  addProposalFinalCost: PropTypes.func
+}
