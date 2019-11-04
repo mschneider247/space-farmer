@@ -15,6 +15,10 @@ export const proposals = (state = [], action) => {
     case 'ADD_DESTINATION':
       return state.map(proposal => {
         return proposal.id === state[state.length - 1].id ? {...proposal, destination : action.destination} : proposal;
+      })
+    case 'FINAL_COST':
+      return state.map(proposal => {
+        return proposal.id === state[state.length - 1].id ? {...proposal, finalCost : action.finalCost} : proposal;
       })  
     default:
       return state

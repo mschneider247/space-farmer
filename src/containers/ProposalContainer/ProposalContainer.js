@@ -35,7 +35,8 @@ export class ProposalContainer extends Component {
       return (
         <article className="proposal-card">
           <h3>Proposal# {proposal.id}</h3>
-          <h3>PROPOSAL REJECTED</h3>
+          <h3>Final Cost $$ {proposal.finalCost}</h3>
+          <h3 className="red-text">PROPOSAL REJECTED</h3>
         </article>
       )
     })

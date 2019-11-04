@@ -1,20 +1,46 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
+import './Overview.css'
+import { addProposalFinalCost } from '../../actions'
 
 export class Overview extends Component{
+
+  numberOfRockets = (currentProposal) => {
+    console.log(currentProposal.rocket.payloads)
+    let currentRocketPayload = currentProposal.rocket.payloads.find(payload => payload.id === currentProposal.destination).lb
+    console.log(currentRocketPayload)
+    return Math.ceil(currentProposal.supplies.supplyWeight / currentRocketPayload)
+  }
+
+  updateProposal = (totalCost) => {
+    this.props.addProposalFinalCost(totalCost)
+  }
+
   render() {
     let currentProposal = this.props.proposals[this.props.proposals.length - 1]
+    let numberOfLaunches = this.numberOfRockets(currentProposal)
+    let launchCost = numberOfLaunches * currentProposal.rocket.cost
+    let totalCost = launchCost + currentProposal.supplies.supplyCost
     return (
-      <>
+      <section className="overview-box">
         <h3>Overview</h3>
         <p>Proposal# {currentProposal.id}</p>
         <p>Supply Cost: {currentProposal.supplies.supplyCost}</p>
         <p>Supply Weight: {currentProposal.supplies.supplyWeight}</p>
         <p>Destination: {currentProposal.destination}</p>
         <p>Rocket Choice: {currentProposal.rocket.name}</p>
-        <Link to='/proposals'><button>Try Again!</button></Link>
-      </>
+        <br></br>
+        <p>Your payload of {currentProposal.supplies.supplyWeight}lbs will take</p>
+        <p>{numberOfLaunches} launches of {currentProposal.rocket.name}</p>
+        <br></br>
+        <p>{numberOfLaunches} {currentProposal.rocket.name} will cost</p>
+        <p>$ {launchCost}</p>
+        <br></br>
+        <p>For a total cost of $$ {totalCost}</p>
+        <h3 className="red-text">PROPOSAL: REJECTED</h3>
+        <Link to='/proposals'><button onClick={() => this.updateProposal(totalCost)}>Try Again!</button></Link>
+      </section>
     )
   }
 };
@@ -23,4 +49,8 @@ export const mapStateToProps = state => ({
   proposals: state.proposals
 });
 
-export default connect(mapStateToProps, null)(Overview);
+export const mapDispatchToProps = dispatch => ({
+  addProposalFinalCost: finalCost => dispatch(addProposalFinalCost(finalCost))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Overview);
