@@ -27,7 +27,7 @@ export class Supplies extends Component {
       hoeCost: 0,
       hoeWeight: 0,
       seedCost: 0,
-      seedWeight: 0
+      seedWeight: 0,
     }
   }
 

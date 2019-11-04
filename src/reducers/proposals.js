@@ -11,6 +11,10 @@ export const proposals = (state = [], action) => {
     case 'ADD_ROCKET_CHOICE':
       return state.map(proposal => {
         return proposal.id === state[state.length - 1].id ? {...proposal, rocket : action.rocket} : proposal;
+      })
+    case 'ADD_DESTINATION':
+      return state.map(proposal => {
+        return proposal.id === state[state.length - 1].id ? {...proposal, destination : action.destination} : proposal;
       })  
     default:
       return state
