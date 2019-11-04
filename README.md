@@ -1,7 +1,7 @@
 # Space Farmer
 
 ## by: Michael Schneider
-[Michael Schneider](https://github.com/mschneider247), 
+[Michael Schneider](https://github.com/mschneider247)
 
 ### Summary:
 Space Farmer is a web-based game that allows a user to choose farming supplies to take into space.  The user gets a choice of destination and rockets to fly on that are fetched from an unofficial SpaceX API.  Once the user has decided where to go and on which rocket the application will give the total costs required to make the trip.  Proposals are stored in the Redux store and displayed to the user when at the /proposals route. 
