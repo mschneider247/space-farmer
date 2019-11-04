@@ -1,39 +1,39 @@
-export const setRockets = data => ({
+export const setRockets = (data) => ({
   type: 'SET_ROCKETS',
-  data
-})
-
-export const setUser = user => ({
-  type: 'SET_USER_NAME',
-  user
+  data,
 });
 
-export const setProposal = proposal => ({
+export const setUser = (user) => ({
+  type: 'SET_USER_NAME',
+  user,
+});
+
+export const setProposal = (proposal) => ({
   type: 'SET_PROPOSAL',
-  proposal
-})
+  proposal,
+});
 
-export const addProposal = proposal => ({
+export const addProposal = (proposal) => ({
   type: 'ADD_PROPOSAL',
-  proposal
-})
+  proposal,
+});
 
-export const addSupplies = supplies => ({
+export const addSupplies = (supplies) => ({
   type: 'ADD_SUPPLIES',
-  supplies
-})
+  supplies,
+});
 
-export const addRocketChoice = rocket => ({
+export const addRocketChoice = (rocket) => ({
   type: 'ADD_ROCKET_CHOICE',
-  rocket
-})
+  rocket,
+});
 
-export const addDestination = destination => ({
+export const addDestination = (destination) => ({
   type: 'ADD_DESTINATION',
-  destination
-})
+  destination,
+});
 
-export const addProposalFinalCost = finalCost => ({
+export const addProposalFinalCost = (finalCost) => ({
   type: 'FINAL_COST',
-  finalCost
-})
+  finalCost,
+});
