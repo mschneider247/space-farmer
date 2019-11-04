@@ -1,0 +1,6 @@
+.destinations {
+  width: 800px;
+  margin-left: 3%;
+  display: flex;
+  border-bottom: 3px solid grey;
+}

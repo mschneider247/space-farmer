@@ -27,3 +27,8 @@ export const addRocketChoice = rocket => ({
   type: 'ADD_ROCKET_CHOICE',
   rocket
 })
+
+export const addDestination = destination => ({
+  type: 'ADD_DESTINATION',
+  destination
+})
