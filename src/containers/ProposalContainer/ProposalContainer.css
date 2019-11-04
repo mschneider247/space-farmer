@@ -13,7 +13,13 @@
 }
 
 .proposal-card {
+  text-align: center;
+  padding: 1%;
   margin: 1%;
+  width: 200px;
+  border: 2px solid grey;
+  background-color: rgba(100, 100, 100, 50%);
+  border-radius: 10px;
 }
 
 h3 {
