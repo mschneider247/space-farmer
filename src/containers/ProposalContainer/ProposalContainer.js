@@ -31,16 +31,21 @@ export class ProposalContainer extends Component {
   }
 
   render() {
+    const proposals = this.props.proposals.map(proposal => {
+      return (
+        <article>
+          <h3>Proposal# {proposal.id}</h3>
+          <h3>PROPOSAL REJECTED</h3>
+        </article>
+      )
+    })
+
     return (
       <section>
+      {console.log("proposals", proposals)}
       {this.checkProposalCreation()}
         <section className="space-background">
-          {/* <article>
-            <h5>Proposal 1</h5>
-          </article>
-          <article>
-            <h5>Proposal 2</h5>
-          </article> */}
+          {proposals.length === 0 ? <h3>Start a new proposal below!</h3> : proposals}
         </section>
         <section className="section_create">
           <button onClick={(event) => this.handleClick(event)} className="create_btn">Create Proposal</button>
