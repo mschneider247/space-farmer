@@ -14,6 +14,7 @@ import falcon1 from '../../images/falcon1.jpg';
 import falcon9 from '../../images/falcon9.jpg';
 import falconHeavy from '../../images/falconHeavy.jpg';
 import starship from '../../images/starship.jpg';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
 
@@ -106,3 +107,7 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(App)
+
+App.propTypes = {
+  setRockets: PropTypes.func
+}

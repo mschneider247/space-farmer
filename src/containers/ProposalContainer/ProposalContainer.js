@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
 import './ProposalContainer.css';
-import { connect } from 'react-redux'
-import { addProposal } from '../../actions/index.js'
+import { connect } from 'react-redux';
+import { addProposal } from '../../actions/index.js';
+import PropTypes from 'prop-types';
 
 export class ProposalContainer extends Component {
   constructor() {
@@ -66,3 +67,9 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProposalContainer);
+
+ProposalContainer.propTypes = {
+  proposals: PropTypes.array,
+  addProposal: PropTypes.func,
+  newProposal: PropTypes.bool
+}
