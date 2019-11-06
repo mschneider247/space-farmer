@@ -22,7 +22,7 @@ describe('ProposalContainer mapDispatchToProps', () => {
   });
 });
 
-describe('Nav mapStateToProps', () => {
+describe('ProposalContainer mapStateToProps', () => {
   it('Should access the proposals key in the Redux store', () => {
     const mockState = {
       proposals: [{}],
