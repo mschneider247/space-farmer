@@ -23,8 +23,56 @@ describe('Supplies container', () => {
     const wrapper = shallow(<Supplies/>)
     wrapper.instance().handleTractor(10, 10)
     expect(wrapper.state()).toEqual(mockState)
-  })
-})
+  });
+
+  it('Should update dirt in state when handleDirt is called', () => {
+    const mockState = {
+      tractorCost: 0,
+      tractorWeight: 0,
+      dirtCost: 10,
+      dirtWeight: 10,
+      hoeCost: 0,
+      hoeWeight: 0,
+      seedCost: 0,
+      seedWeight: 0,
+    };
+    const wrapper = shallow(<Supplies/>);
+    wrapper.instance().handleDirt(10, 10);
+    expect(wrapper.state()).toEqual(mockState);
+  });
+
+  it('Should update hoes in state when handleHoe is called', () => {
+    const mockState = {
+      tractorCost: 0,
+      tractorWeight: 0,
+      dirtCost: 0,
+      dirtWeight: 0,
+      hoeCost: 10,
+      hoeWeight: 10,
+      seedCost: 0,
+      seedWeight: 0,
+    };
+    const wrapper = shallow(<Supplies/>);
+    wrapper.instance().handleHoe(10, 10);
+    expect(wrapper.state()).toEqual(mockState);
+  });
+
+  it('Should update seeds in state when handleSeed is called', () => {
+    const mockState = {
+      tractorCost: 0,
+      tractorWeight: 0,
+      dirtCost: 0,
+      dirtWeight: 0,
+      hoeCost: 0,
+      hoeWeight: 0,
+      seedCost: 10,
+      seedWeight: 10,
+    };
+    const wrapper = shallow(<Supplies/>);
+    wrapper.instance().handleSeed(10, 10);
+    expect(wrapper.state()).toEqual(mockState);
+  });
+});
 
 describe('mapDispatchToProps', () => {
   it('calls dispatch with addSupplies action when addSupplies is called', () => {
