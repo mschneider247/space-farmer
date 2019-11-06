@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Rockets, mapDispatchToProps } from './Rockets';
+import { Rockets, mapDispatchToProps, mapStateToProps } from './Rockets';
 import { addDestination } from '../../actions';
 
 describe('Rockets container', () => {
@@ -50,5 +50,25 @@ describe('Rockets mapDispatchToProps', () => {
     const mappedProps = mapDispatchToProps(mockDispatch);
     mappedProps.addDestination('moon');
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+});
+
+describe('Rockets mapStateToProps', () => {
+  it('Should access proposals in the Redux store', () => {
+    const mockState = {
+      proposals: { id: 1 },
+    };
+    const expected = { proposals: { id: 1 } };
+    const mappedProps = mapStateToProps(mockState);
+    expect(mappedProps).toEqual(expected);
+  });
+
+  it('Should access rockets in the Redux store', () => {
+    const mockState = {
+      rockets: { name: 'rocket-thing' },
+    };
+    const expected = { rockets: { name: 'rocket-thing' } };
+    const mappedProps = mapStateToProps(mockState);
+    expect(mappedProps).toEqual(expected);
   });
 });
