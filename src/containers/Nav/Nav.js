@@ -1,9 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { setUser } from '../../actions';
 import './Nav.css';
-import PropTypes from 'prop-types';
 
 export const Nav = (props) => {
   const handleClick = () => {
@@ -11,7 +11,7 @@ export const Nav = (props) => {
   }
 
   const checkLogin = () => {
-    if (props.user === ""){
+    if (props.user === '') {
       return (
         <Redirect to='/'></Redirect>
       )
@@ -30,13 +30,13 @@ export const Nav = (props) => {
   )
 }
 
-export const mapStateToProps = state => ({
-  user: state.setUser
-})
+export const mapStateToProps = (state) => ({
+  user: state.setUser,
+});
 
-export const mapDispatchToProps = dispatch => ({
-  setUser: userName => dispatch(setUser(userName))
-})
+export const mapDispatchToProps = (dispatch) => ({
+  setUser: (userName) => dispatch(setUser(userName)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);
 

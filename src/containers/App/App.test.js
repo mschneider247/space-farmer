@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { App, mapDispatchToProps } from './App';
 import falcon1 from '../../images/falcon1.jpg';
-import { setRockets } from '../../actions'
+import { setRockets } from '../../actions';
 
 describe('App container', () => {
   let wrapper;
