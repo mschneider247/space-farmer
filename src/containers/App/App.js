@@ -39,14 +39,15 @@ export class App extends Component {
 
   getRocketImage = (rocketId) => {
     if (rocketId === 1) {
-      return falcon1
-    } else if (rocketId === 2) {
-      return falcon9
-    } else if (rocketId === 3) {
-      return falconHeavy
-    } else {
-      return starship
+      return falcon1;
     }
+    if (rocketId === 2) {
+      return falcon9;
+    }
+    if (rocketId === 3) {
+      return falconHeavy;
+    }
+    return starship;
   }
 
   render () {

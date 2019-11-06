@@ -1,33 +1,32 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { addRocketChoice } from '../../actions';
-import { addDestination } from '../../actions';
+import { addRocketChoice, addDestination } from '../../actions';
 import './Rockets.css';
 import LEO from '../../images/LEO.jpg';
 import GTO from '../../images/GTO.jpg';
 import moon from '../../images/moon.jpg';
 import mars from '../../images/mars.jpg';
 import pluto from '../../images/pluto.png';
-import PropTypes from 'prop-types';
 
-export class Rockets extends Component{
+export class Rockets extends Component {
   constructor() {
     super();
     this.state = {
       destination: '',
-      rocketChoice: ''
-    }
+      rocketChoice: '',
+    };
   }
 
-  handleDestination = destination => {
-    this.setState({destination: destination})
+  handleDestination = (destination) => {
+    this.setState({ destination: destination })
     this.props.addDestination(destination)
   }
 
-  handleRocket = rocket => {
-    this.setState({rocketChoice: rocket.name})
-    this.props.addRocketChoice(rocket)
+  handleRocket = (rocket) => {
+    this.setState({ rocketChoice: rocket.name });
+    this.props.addRocketChoice(rocket);
   }
 
   createRockets = (availableRockets) => {
