@@ -32,7 +32,7 @@ export class App extends Component {
         }
       });
       this.props.setRockets(cleanRockets);
-    } catch ({message}) {
+    } catch ({ message }) {
       console.log('Bad response from server trying to fetch rockets', message)
     }
   }

@@ -64,27 +64,27 @@ export class Rockets extends Component {
            <div className="destination-card">
             <p className="destination_p">Low Earth Orbit</p>
             <img src={LEO} alt="LEO" />
-            <input className="destination_input" onClick={() =>{this.handleDestination("leo")}} type="radio" name="destination" value="leo" />
+            <input className="destination_input" onClick={() =>{ this.handleDestination("leo")}} type="radio" name="destination" value="leo" />
           </div>
           <div className="destination-card">
             <p className="destination_p">Geostationary Transfer Orbit</p>
             <img src={GTO} alt="GTO" />
-            <input className="destination_input" onClick={() =>{this.handleDestination("gto")}} type="radio" name="destination" value="gto" />
+            <input className="destination_input" onClick={() =>{ this.handleDestination("gto")}} type="radio" name="destination" value="gto" />
           </div>
           <div className="destination-card">
             <p className="destination_p">Moon</p>
             <img src={moon} alt="Moon" />
-            <input className="destination_input" onClick={() =>{this.handleDestination("moon")}} type="radio" name="destination" value="moon" />
+            <input className="destination_input" onClick={() =>{ this.handleDestination("moon")}} type="radio" name="destination" value="moon" />
           </div>
           <div className="destination-card">
             <p className="destination_p">Mars</p>
             <img src={mars} alt="Mars" />
-            <input className="destination_input" onClick={() =>{this.handleDestination("mars")}} type="radio" name="destination" value="mars" />
+            <input className="destination_input" onClick={() =>{ this.handleDestination("mars")}} type="radio" name="destination" value="mars" />
           </div>
           <div className="destination-card">
             <p className="destination_p">Pluto</p>
             <img src={pluto} alt="Pluto" />
-            <input className="destination_input" onClick={() =>{this.handleDestination("pluto")}} type="radio" name="destination" value="pluto" />
+            <input className="destination_input" onClick={() =>{ this.handleDestination("pluto")}} type="radio" name="destination" value="pluto" />
           </div>
         </section>
         <section className="rockets">
@@ -107,12 +107,12 @@ export class Rockets extends Component {
   }
 };
 
-export const mapStateToProps = state => ({
+export const mapStateToProps = (state) => ({
   proposals: state.proposals,
   rockets: state.rockets,
 });
 
-export const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = (dispatch) => ({
   addDestination: (destination) => dispatch(addDestination(destination)),
   addRocketChoice: (rocket) => dispatch(addRocketChoice(rocket))
 });

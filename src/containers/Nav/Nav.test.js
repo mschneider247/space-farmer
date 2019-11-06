@@ -22,7 +22,7 @@ describe('Nav mapDispatchToProps', () => {
 });
 
 describe('Nav mapStateToProps', () => {
-  it('Should access the setUser property in the Redux store', () => {
+  it('Should access the setUser key in the Redux store', () => {
     const mockState = {
       setUser: 'Steve',
     };
