@@ -4,18 +4,6 @@ import { connect } from 'react-redux';
 import './Supplies.css';
 import PropTypes from 'prop-types';
 import { addSupplies } from '../../actions';
-import tonka from '../../images/tonka.jpg';
-import mule from '../../images/mule.jpg';
-import combine from '../../images/combine.jpg';
-import hoe from '../../images/hoe.jpg';
-import gardentools from '../../images/gardentools.jpg';
-import hal9000 from '../../images/hal9000.jpg';
-import dirt from '../../images/dirt.jpg';
-import moredirt from '../../images/moredirt.jpg';
-import mostdirt from '../../images/mostdirt.jpg';
-import carrots from '../../images/carrots.jpg';
-import variety from '../../images/variety.jpg';
-import exotic from '../../images/exotic.jpg';
 import supplyData from './supplyData';
 
 export class Supplies extends Component {
@@ -36,7 +24,8 @@ export class Supplies extends Component {
     const supplies = supplyData.map(supply => {
       return (
         <div className="supply-card" key={supply.id}>
-          <p>{supply.name}, ${supply.cost}</p>
+          <p>{supply.name}</p>
+          <p>$ {supply.cost}</p>
           <p>{supply.weight} lbs</p>
           <img src={supply.imageURL} alt={supply.name}/>
         </div>
