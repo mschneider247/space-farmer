@@ -10,6 +10,7 @@ export class Supplies extends Component {
   constructor() {
     super();
     this.state = {
+      supplies: supplyData,
       supplyCost: 0,
       supplyWeight: 0,
     };
@@ -19,11 +20,17 @@ export class Supplies extends Component {
     this.props.addSupplies({ supplyCost: this.state.supplyCost, supplyWeight: this.state.supplyWeight });
   }
 
-  render() {
+  handleSupplies = (id) => {
+    console.log("handle supplies clicked");
+    console.log(id);
+    const foundCard = this.state.supplies.find((supply) => supply.id === id);
+    console.log("found card", foundCard)
+  }
 
-    const supplies = supplyData.map(supply => {
+  render() {
+    const supplies = supplyData.map((supply) => {
       return (
-        <div className="supply-card" key={supply.id}>
+        <div className="supply-card" key={supply.id} onClick={() => this.handleSupplies(supply.id)}>
           <p>{supply.name}</p>
           <p>$ {supply.cost}</p>
           <p>{supply.weight} lbs</p>
@@ -40,15 +47,18 @@ export class Supplies extends Component {
         <section className="supplies">
           {supplies}
         </section>
-          <div className="supply-footer">
-            <div className="footer-text">
-              <p id="totalcost">Total Cost: <span className="symbols">$</span> {this.state.supplyCost}</p>
-              <p id="totalweight">Total Weight: {this.state.supplyWeight} <span className="symbols">lbs</span></p>
-            </div>
-            <div className="footer-btn">
-              <Link to='/rockets'><button onClick={this.handleSubmit} className="supply-btn">Continue to Rockets!</button></Link>
-            </div>
+        <div className="supply-footer">
+          <div className="footer-text">
+            <p id="totalcost">Total Cost: <span className="symbols">$</span> {this.state.supplyCost}</p>
+            <p id="totalweight">
+              Total Weight: {this.state.supplyWeight} 
+              <span className="symbols">lbs</span>
+            </p>
           </div>
+          <div className="footer-btn">
+            <Link to='/rockets'><button onClick={this.handleSubmit} className="supply-btn">Continue to Rockets!</button></Link>
+          </div>
+        </div>
       </section>
     )
   }
