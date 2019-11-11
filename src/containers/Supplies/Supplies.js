@@ -21,14 +21,20 @@ export class Supplies extends Component {
   }
 
   handleSupplies = (id) => {
-    console.log("handle supplies clicked");
-    console.log(id);
     const foundCard = this.state.supplies.find((supply) => supply.id === id);
-    console.log("found card", foundCard)
+    console.log("found card.isChosen", foundCard.isChosen);
+    const mappedSupplies = this.state.supplies.map(supply => {
+      if (supply.id === id) {
+        supply.isChosen = !supply.isChosen;
+      }
+      return supply;
+    });
+    this.setState({supplies : mappedSupplies})
+    console.log("found card.isChosen", foundCard.isChosen);
   }
 
   render() {
-    const supplies = supplyData.map((supply) => {
+    const supplies = this.state.supplies.map((supply) => {
       return (
         <div className="supply-card" key={supply.id} onClick={() => this.handleSupplies(supply.id)}>
           <p>{supply.name}</p>
