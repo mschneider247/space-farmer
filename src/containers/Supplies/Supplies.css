@@ -5,7 +5,14 @@ h4 {
 img {
   width: 100%;
   height: 52%;
-  border-radius: 5px;
+  border-radius: 20px;
+  border: 4px solid darkslategray;
+}
+
+.chosen {
+  box-shadow: 2px 2px 3px green;
+  background-color: darkslategray;
+  color: black;
 }
 
 .supplies {
@@ -18,10 +25,14 @@ img {
   text-align: center;
   margin: 1%;
   padding: 0 2% 2% 2%;
-  border: 1px solid green;
+  border: 1px solid darkgreen;
   border-radius: 10px;
   width: 20%;
   height: 250px;
+}
+
+.supply-card:hover {
+  transform: scale(1.01);
 }
 
 .supply-footer {
@@ -33,8 +44,8 @@ img {
   margin-left: 12%;
   display: flex;
   flex-direction: column;
-  background-color: grey;
-  border: 1px solid lime;
+  background-color: #5e5e5e;
+  border: 1px solid green;
   border-radius: 10px;
 }
 
@@ -51,7 +62,6 @@ img {
 
 .symbols {
   color: lime;
-  background-color: grey;
 }
 
 .supply-btn {

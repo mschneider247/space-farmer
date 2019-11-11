@@ -31,6 +31,7 @@ input {
 }
 
 button:hover {
-  background-color: green;
+  background-color: darkslategrey;
   color: white;
+  transform: scale(1.04);
 }

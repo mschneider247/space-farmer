@@ -18,6 +18,7 @@ const supplyData = [
     cost: 20,
     weight: 2,
     imageURL: tonka,
+    isChosen: false,
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ const supplyData = [
     cost: 150,
     weight: 500,
     imageURL: mule,
+    isChosen: false,
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const supplyData = [
     cost: 420000,
     weight: 36000,
     imageURL: combine,
+    isChosen: false,
   },
   {
     id: 4,
@@ -39,6 +42,7 @@ const supplyData = [
     cost: 7,
     weight: 40,
     imageURL: dirt,
+    isChosen: false,
   },
   {
     id: 5,
@@ -46,6 +50,7 @@ const supplyData = [
     cost: 40,
     weight: 1080,
     imageURL: moredirt,
+    isChosen: false,
   },
   {
     id: 6,
@@ -53,6 +58,7 @@ const supplyData = [
     cost: 3000,
     weight: 108000,
     imageURL: mostdirt,
+    isChosen: false,
   },
   {
     id: 7,
@@ -60,6 +66,7 @@ const supplyData = [
     cost: 6,
     weight: 3,
     imageURL: hoe,
+    isChosen: false,
   },
   {
     id: 8,
@@ -67,6 +74,7 @@ const supplyData = [
     cost: 35,
     weight: 20,
     imageURL: gardentools,
+    isChosen: false,
   },
   {
     id: 9,
@@ -74,6 +82,7 @@ const supplyData = [
     cost: 34000,
     weight: 200,
     imageURL: hal9000,
+    isChosen: false,
   },
   {
     id: 10,
@@ -81,6 +90,7 @@ const supplyData = [
     cost: 1,
     weight: 0.5,
     imageURL: carrots,
+    isChosen: false,
   },
   {
     id: 11,
@@ -88,6 +98,7 @@ const supplyData = [
     cost: 10,
     weight: 4,
     imageURL: variety,
+    isChosen: false,
   },
   {
     id: 12,
@@ -95,6 +106,7 @@ const supplyData = [
     cost: 110,
     weight: 9,
     imageURL: exotic,
+    isChosen: false,
   },
 ];
 

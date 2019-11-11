@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import getRocketData from '../../apiCalls/apiCalls';
 import { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import getRocketData from '../../apiCalls/apiCalls';
 import Welcome from '../Welcome/Welcome';
 import Nav from '../Nav/Nav';
 import Supplies from '../Supplies/Supplies';
 import Rockets from '../Rockets/Rockets';
 import Overview from '../Overview/Overview';
-import { Route, Switch } from 'react-router-dom';
 import ProposalContainer from '../ProposalContainer/ProposalContainer';
 import { setRockets } from '../../actions';
 import falcon1 from '../../images/falcon1.jpg';
 import falcon9 from '../../images/falcon9.jpg';
 import falconHeavy from '../../images/falconHeavy.jpg';
 import starship from '../../images/starship.jpg';
-import PropTypes from 'prop-types';
 
 export class App extends Component {
 
@@ -28,8 +28,8 @@ export class App extends Component {
           cost: rocket.cost_per_launch,
           payloads: rocket.payload_weights,
           successRate: rocket.success_rate_pct,
-          image: this.getRocketImage(rocket.id)
-        }
+          image: this.getRocketImage(rocket.id),
+        };
       });
       this.props.setRockets(cleanRockets);
     } catch ({ message }) {
