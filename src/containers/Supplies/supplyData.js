@@ -1,0 +1,88 @@
+const supplyData = [
+  {
+    id: 1,
+    name: 'Tonka Truck',
+    cost: 20,
+    weight: 2,
+    imageURL: '../../images/tonka.jpg',
+  },
+  {
+    id: 2,
+    name: 'Mule',
+    cost: 150,
+    weight: 500,
+    imageURL: '../../images/mule.jpg',
+  },
+  {
+    id: 3,
+    name: 'Combine',
+    cost: 420000,
+    weight: 36000,
+    imageURL: '../../images/combine.jpg',
+  },
+  {
+    id: 4,
+    name: 'One cubic foot of dirt',
+    cost: 7,
+    weight: 40,
+    imageURL: '../../images/dirt.jpg',
+  },
+  {
+    id: 5,
+    name: 'One cubic yard of dirt',
+    cost: 40,
+    weight: 1080,
+    imageURL: '../../images/moredirt.jpg',
+  },
+  {
+    id: 6,
+    name: 'One hundred cubic yards of dirt',
+    cost: 3000,
+    weight: 108000,
+    imageURL: '../../images/mostdirt.jpg',
+  },
+  {
+    id: 7,
+    name: 'Basic hoe',
+    cost: 6,
+    weight: 3,
+    imageURL: '../../images/hoe.jpg',
+  },
+  {
+    id: 8,
+    name: 'Garden tools',
+    cost: 35,
+    weight: 20,
+    imageURL: '../../images/gardentools.jpg',
+  },
+  {
+    id: 9,
+    name: 'HAL 9000',
+    cost: 34000,
+    weight: 200,
+    imageURL: '../../images/hal9000.jpg',
+  },
+  {
+    id: 10,
+    name: 'Carrots',
+    cost: 1,
+    weight: 0.5,
+    imageURL: '../../images/carrots.jpg',
+  },
+  {
+    id: 11,
+    name: 'Fruit and veggie variety',
+    cost: 10,
+    weight: 4,
+    imageURL: '../../images/variety.jpg',
+  },
+  {
+    id: 12,
+    name: 'Exotics',
+    cost: 110,
+    weight: 9,
+    imageURL: '../../images/exotic.jpg',
+  },
+];
+
+export default supplyData;
