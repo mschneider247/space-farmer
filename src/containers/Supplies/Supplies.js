@@ -76,7 +76,7 @@ export class Supplies extends Component {
             <p id="totalcost">Total Cost: <span className="symbols">$</span> {this.state.supplyCost}</p>
             <p id="totalweight">
               Total Weight: {this.state.supplyWeight} 
-              <span className="symbols">lbs</span>
+              <span className="symbols"> lbs</span>
             </p>
           </div>
           <div className="footer-btn">
