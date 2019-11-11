@@ -8,6 +8,12 @@ img {
   border-radius: 5px;
 }
 
+.chosen {
+  box-shadow: 2px 2px 3px lime;
+  background-color: grey;
+  color: black;
+}
+
 .supplies {
   display: flex;
   flex-wrap: wrap;
@@ -18,7 +24,7 @@ img {
   text-align: center;
   margin: 1%;
   padding: 0 2% 2% 2%;
-  border: 1px solid green;
+  border: 1px solid darkgreen;
   border-radius: 10px;
   width: 20%;
   height: 250px;

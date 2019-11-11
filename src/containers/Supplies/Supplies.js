@@ -18,6 +18,8 @@ export class Supplies extends Component {
 
   handleSubmit = () => {
     this.props.addSupplies({ supplyCost: this.state.supplyCost, supplyWeight: this.state.supplyWeight });
+    const clearSupplies = this.state.supplies.map(supply => supply.isChosen = false);
+    this.setState({ supplies: clearSupplies });
   }
 
   addOrRemoveSupplyCostandWeight = (supply) => {
@@ -46,8 +48,13 @@ export class Supplies extends Component {
 
   render() {
     const supplies = this.state.supplies.map((supply) => {
+      let chosen = 'supply-card';
+      if (supply.isChosen) {
+        chosen += ' chosen';
+      }
+
       return (
-        <div className="supply-card" key={supply.id} onClick={() => this.handleSupplies(supply.id)}>
+        <div className={chosen} key={supply.id} onClick={() => this.handleSupplies(supply.id)}>
           <p>{supply.name}</p>
           <p>$ {supply.cost}</p>
           <p>{supply.weight} lbs</p>
