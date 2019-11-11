@@ -22,46 +22,26 @@ export class Supplies extends Component {
   constructor() {
     super();
     this.state = {
-      tractorCost: 0,
-      tractorWeight: 0,
-      dirtCost: 0,
-      dirtWeight: 0,
-      hoeCost: 0,
-      hoeWeight: 0,
-      seedCost: 0,
-      seedWeight: 0,
-    }
-  }
-
-  handleTractor = (cost, weight) => {
-    this.setState({ tractorCost: cost });
-    this.setState({ tractorWeight: weight });
-  }
-
-  handleDirt = (cost, weight) => {
-    this.setState({ dirtCost: cost });
-    this.setState({ dirtWeight: weight });
-  }
-
-  handleHoe = (cost, weight) => {
-    this.setState({ hoeCost: cost });
-    this.setState({ hoeWeight: weight });
-  }
-
-  handleSeed = (cost, weight) => {
-    this.setState({ seedCost: cost });
-    this.setState({ seedWeight: weight });
+      supplyCost: 0,
+      supplyWeight: 0,
+    };
   }
 
   handleSubmit = () => {
-    let totalCost = this.state.tractorCost + this.state.dirtCost + this.state.hoeCost + this.state.seedCost;
-    let totalWeight = this.state.tractorWeight + this.state.dirtWeight + this.state.hoeWeight + this.state.seedWeight;
-    this.props.addSupplies({supplyCost: totalCost, supplyWeight: totalWeight})
+    this.props.addSupplies({ supplyCost: this.state.supplyCost, supplyWeight: this.state.supplyWeight });
   }
 
   render() {
-    let totalCost = this.state.tractorCost + this.state.dirtCost + this.state.hoeCost + this.state.seedCost;
-    let totalWeight = this.state.tractorWeight + this.state.dirtWeight + this.state.hoeWeight + this.state.seedWeight;
+
+    const supplies = supplyData.map(supply => {
+      return (
+        <div className="supply-card" key={supply.id}>
+          <p>{supply.name}, ${supply.cost}</p>
+          <p>{supply.weight} lbs</p>
+          <img src={supply.imageURL} alt={supply.name}/>
+        </div>
+      )
+    })
 
     return (
       <section>
@@ -69,19 +49,12 @@ export class Supplies extends Component {
           <h4>Pick your supplies!</h4>
         </section>
         <section className="supplies">
-          <section className="tractors">
-            <div className="supply-card">
-              <p>Tonka Truck, $20</p>
-              <p>2 lbs</p>
-              <img src={tonka} alt="Tonka Truck" />
-              <input className="supplies_input" onClick={() => {this.handleTractor(20, 2)}} type="radio" name="tractor" value="tonka" />
-            </div>
-          </section>
+          {supplies}
         </section>
           <div className="supply-footer">
             <div className="footer-text">
-              <p id="totalcost">Total Cost: <span className="symbols">$</span> {totalCost}</p>
-              <p id="totalweight">Total Weight: {totalWeight} <span className="symbols">lbs</span></p>
+              <p id="totalcost">Total Cost: <span className="symbols">$</span> {this.state.supplyCost}</p>
+              <p id="totalweight">Total Weight: {this.state.supplyWeight} <span className="symbols">lbs</span></p>
             </div>
             <div className="footer-btn">
               <Link to='/rockets'><button onClick={this.handleSubmit} className="supply-btn">Continue to Rockets!</button></Link>
