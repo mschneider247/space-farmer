@@ -20,17 +20,28 @@ export class Supplies extends Component {
     this.props.addSupplies({ supplyCost: this.state.supplyCost, supplyWeight: this.state.supplyWeight });
   }
 
+  addOrRemoveSupplyCostandWeight = (supply) => {
+    let cost, weight;
+    if (supply.isChosen) {
+      cost = this.state.supplyCost + supply.cost;
+      weight = this.state.supplyWeight + supply.weight;
+    } else {
+      cost = this.state.supplyCost - supply.cost;
+      weight = this.state.supplyWeight - supply.weight;
+    }
+    this.setState({ supplyCost: cost });
+    this.setState({ supplyWeight: weight });
+  };
+
   handleSupplies = (id) => {
-    const foundCard = this.state.supplies.find((supply) => supply.id === id);
-    console.log("found card.isChosen", foundCard.isChosen);
     const mappedSupplies = this.state.supplies.map(supply => {
       if (supply.id === id) {
         supply.isChosen = !supply.isChosen;
+        this.addOrRemoveSupplyCostandWeight(supply);
       }
       return supply;
     });
-    this.setState({supplies : mappedSupplies})
-    console.log("found card.isChosen", foundCard.isChosen);
+    this.setState({ supplies : mappedSupplies });
   }
 
   render() {
