@@ -9,7 +9,8 @@ export class Welcome extends Component {
   constructor() {
     super();
     this.state = {
-      name: ''
+      name: '',
+      noName: undefined,
     }
   }
 
@@ -18,7 +19,11 @@ export class Welcome extends Component {
   }
 
   handleClick = async (event) => {
-    event.stopPropagation();
+    if (this.state.name === ''){
+      await this.setState({ noName: true })
+    } else {
+      await this.setState({ noName: false })
+    }
     await this.props.setUser(this.state.name)
   }
 
@@ -44,6 +49,7 @@ export class Welcome extends Component {
             onChange={this.updateName}
           />
           <button onClick={(event) => this.handleClick(event)}>Start Farming!</button>
+          {this.state.noName ? <p id="no_name_error">Please Enter a Name</p> : null}
         </div>
         {reRoute}
       </div>
