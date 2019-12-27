@@ -2,6 +2,14 @@
   color: white;
 }
 
-button {
-  background-color: black;
+main {
+  background-image: url('../../images/stars.jpg');
+}
+
+.farmer {
+  color: #2DB342;
+}
+
+.farmer:hover {
+  color: greenyellow;
 }
