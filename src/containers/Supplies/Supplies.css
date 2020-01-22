@@ -10,8 +10,15 @@ img {
 }
 
 .chosen {
+  text-align: center;
+  margin: 1%;
+  padding: 0 2% 2% 2%;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 200px;
+  height: 250px;
   box-shadow: -4px 0px 10px 2px black;
-  background-color: darkslategray;
+  background: darkslategray;
   color: black;
 }
 
@@ -31,6 +38,7 @@ img {
   border-radius: 10px;
   width: 200px;
   height: 250px;
+  background: rgba(0, 0, 0, 50%);
 }
 
 .supply-card:hover {
@@ -44,7 +52,7 @@ img {
   position: fixed;
   bottom: 5%;
   left: -1%;
-  margin-left: 12%;
+  margin-left: 8%;
   display: flex;
   flex-direction: column;
   background-color: #5e5e5e;

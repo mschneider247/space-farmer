@@ -50,7 +50,7 @@ export class Supplies extends Component {
     const supplies = this.state.supplies.map((supply) => {
       let chosen = 'supply-card';
       if (supply.isChosen) {
-        chosen += ' chosen';
+        chosen = 'chosen';
       }
 
       return (

@@ -4,6 +4,7 @@
 
 main {
   height: 100em;
+  width: 100%;
   background-image: url('../../images/stars.jpg');
 }
 
