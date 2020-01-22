@@ -20,7 +20,8 @@ export class Rockets extends Component {
       destination.isChosen = false;
     })
     picked.isChosen = true;
-    this.setState({ destination: destination })
+    let pickedString = ' ' + picked.text
+    this.setState({ destination: pickedString })
     this.props.addDestination(destination)
   }
 
@@ -85,10 +86,10 @@ export class Rockets extends Component {
           }
         </section>
         <section className="rocket-footer">
-          <h3 className="rocket-footer_h3">Destination: 
+          <h3 className="rocket-footer_h3">Destination:
             {this.state.destination}
           </h3>
-          <h3 className = "rocket-footer_h3"> Rocket Choice: 
+          <h3 className = "rocket-footer_h3">Rocket Choice:  
             {this.state.rocketChoice}
           </h3>
           {(this.state.destination !== '' && this.state.rocketChoice !== '') ? <Link to='/overview'><button >Continue To Overview</button></Link> : null}

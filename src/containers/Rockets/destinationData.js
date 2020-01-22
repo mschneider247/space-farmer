@@ -8,7 +8,7 @@ const destinationData = [
   {
     id: 1,
     destination: 'leo',
-    text: 'Low Earch Orbit',
+    text: 'Low Earth Orbit',
     imageURL: LEO,
     isChosen: false,
   },
