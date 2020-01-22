@@ -1,8 +1,26 @@
 .space-background {
-  background-image: url('../../images/spacefarm.jpg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  min-height: 600px;
+  height: 600px;
+  width: 1000px;
+  animation: x 13s linear infinite alternate;
+}
+
+@keyframes space-background {
+  100% {
+    transform: translateX(calc(100vw - 100px));
+  }
+}
+
+#space_pig {
+  position: relative;
+  z-index: -10;
+  height: 300px;
+  animation: y 17s linear infinite alternate;
+}
+
+@keyframes space_pig {
+  100% {
+    transform: translateY(calc(100vh - 100px));
+  }
 }
 
 .proposal-container {
@@ -34,4 +52,21 @@ h3 {
 
 .red-text {
   color: red;
+}
+
+/* img, div {
+  width: 100px;
+  height: 100px;
+}   Parent and child should be same width height...*/
+
+@keyframes x {
+  100% {
+    transform: translateX(calc(100vw - 100px));
+  }
+}
+
+@keyframes y {
+  100% {
+    transform: translateY(calc(100vh - 100px));
+  }
 }

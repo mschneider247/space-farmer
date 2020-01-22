@@ -52,13 +52,12 @@ export class Supplies extends Component {
       if (supply.isChosen) {
         chosen = 'chosen';
       }
-
       return (
         <div className={chosen} key={supply.id} onClick={() => this.handleSupplies(supply.id)}>
           <p>{supply.name}</p>
           <p>$ {supply.cost}</p>
           <p>{supply.weight} lbs</p>
-          <img src={supply.imageURL} alt={supply.name}/>
+          <img class="supply_card_image" src={supply.imageURL} alt={supply.name}/>
         </div>
       )
     })
