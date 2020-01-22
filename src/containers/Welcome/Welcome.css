@@ -39,13 +39,19 @@ input {
 button:hover {
   background-color: darkslategrey;
   color: white;
-  transform: scale(1.04);
+  transform: scale(0.99);
   cursor: pointer;
   font-size: 0.7em;
   font-weight: 900;
-  box-shadow: 2px 2px 3px green;
+  box-shadow: -2px -1px 5px 1px black;
+  border: 1px solid black;
 }
 
 #no_name_error {
   color: red;
+}
+
+#title {
+  margin-top: 0px;
+  font-size: 4.5em;
 }

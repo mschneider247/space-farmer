@@ -39,7 +39,8 @@ export class Welcome extends Component {
     let reRoute = this.checkLogin();
     return (
       <div className="div_welcome">
-        <h1>You are the SPACE <span className="farmer">FARMER</span></h1>
+        <h3 id="pre_title">You are the</h3>
+        <h1 id="title">SPACE <span className="farmer">FARMER</span></h1>
         <div className="div_name-input">
           <input
             className="name-input" 

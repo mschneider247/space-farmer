@@ -10,7 +10,7 @@ img {
 }
 
 .chosen {
-  box-shadow: 2px 2px 3px green;
+  box-shadow: -4px 0px 10px 2px black;
   background-color: darkslategray;
   color: black;
 }
@@ -32,7 +32,8 @@ img {
 }
 
 .supply-card:hover {
-  transform: scale(1.01);
+  transform: scale(0.99);
+  cursor: pointer;
 }
 
 .supply-footer {
