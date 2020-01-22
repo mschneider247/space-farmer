@@ -58,7 +58,7 @@ export class ProposalContainer extends Component {
         <section className="space-background">
           <img id="space_pig" src={spacePig} alt="Pig in Space"/>
         </section>
-        {createProposal}
+        {proposals.length === 0 ? null : createProposal}
       </section>
     )
   }
