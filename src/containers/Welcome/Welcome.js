@@ -15,6 +15,7 @@ export class Welcome extends Component {
   }
 
   updateName = event => {
+    this.setState({ noName: false })
     this.setState({ [event.target.name]: event.target.value})
   }
 

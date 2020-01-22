@@ -1,7 +1,9 @@
 .div_welcome {
-  height: 400px;
-  border: 2px solid grey;
+  position: fixed;
+  top: 5%;
+  left: 13%;
   display: flex;
+  height: 400px;
   flex-direction: column;
   padding: 10%;
   align-items: center;
@@ -49,6 +51,7 @@ button:hover {
 
 #no_name_error {
   color: red;
+  text-align: center;
 }
 
 #title {
