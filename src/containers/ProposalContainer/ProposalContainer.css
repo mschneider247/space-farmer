@@ -6,10 +6,8 @@
 }
 
 .proposal-container {
-  position: fixed;
-  top: 20%;
-  left: 10%;
   display: flex;
+  margin-left: 8%;
 }
 
 .proposal-card {

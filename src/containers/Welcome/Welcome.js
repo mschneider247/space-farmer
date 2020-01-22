@@ -15,6 +15,7 @@ export class Welcome extends Component {
   }
 
   updateName = event => {
+    this.setState({ noName: false })
     this.setState({ [event.target.name]: event.target.value})
   }
 
@@ -39,7 +40,8 @@ export class Welcome extends Component {
     let reRoute = this.checkLogin();
     return (
       <div className="div_welcome">
-        <h1>You are the SPACE <span className="farmer">FARMER</span></h1>
+        <h2 id="pre_title">You are the</h2>
+        <h1 id="title">SPACE <span className="farmer">FARMER</span></h1>
         <div className="div_name-input">
           <input
             className="name-input" 
