@@ -59,32 +59,27 @@ export class Rockets extends Component {
   render() {
     return (
       <>
-        <h3>Where do you want to go?</h3>
+        <h2 id="where_prompt">Where do you want to go?</h2>
         <section className="destinations">
-           <div className="destination-card">
+          <div className="destination-card" onClick={() =>{ this.handleDestination("leo")}}>
             <p className="destination_p">Low Earth Orbit</p>
             <img className="destination_image" src={LEO} alt="LEO" />
-            <input className="destination_input" onClick={() =>{ this.handleDestination("leo")}} type="radio" name="destination" value="leo" />
           </div>
-          <div className="destination-card">
+          <div className="destination-card" onClick={() =>{ this.handleDestination("gto")}}>
             <p className="destination_p">Geostationary Transfer Orbit</p>
             <img className="destination_image" src={GTO} alt="GTO" />
-            <input className="destination_input" onClick={() =>{ this.handleDestination("gto")}} type="radio" name="destination" value="gto" />
           </div>
-          <div className="destination-card">
+          <div className="destination-card" onClick={() =>{ this.handleDestination("moon")}}>
             <p className="destination_p">Moon</p>
             <img className="destination_image" src={moon} alt="Moon" />
-            <input className="destination_input" onClick={() =>{ this.handleDestination("moon")}} type="radio" name="destination" value="moon" />
           </div>
-          <div className="destination-card">
+          <div className="destination-card" onClick={() =>{ this.handleDestination("mars")}}>
             <p className="destination_p">Mars</p>
             <img className="destination_image" src={mars} alt="Mars" />
-            <input className="destination_input" onClick={() =>{ this.handleDestination("mars")}} type="radio" name="destination" value="mars" />
           </div>
-          <div className="destination-card">
+          <div className="destination-card" onClick={() =>{ this.handleDestination("pluto")}}>
             <p className="destination_p">Pluto</p>
             <img className="destination_image" src={pluto} alt="Pluto" />
-            <input className="destination_input" onClick={() =>{ this.handleDestination("pluto")}} type="radio" name="destination" value="pluto" />
           </div>
         </section>
         <section className="rockets">

@@ -1,17 +1,24 @@
+#where_prompt {
+  margin-left: 8%;
+}
+
 .destinations, .rockets {
-  width: 1100px;
+  width: 100%;
   margin-left: 3%;
   display: flex;
+  flex-wrap: wrap;
   border-bottom: 3px solid grey;
 }
 
 .destination_image {
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   border-radius: 10px;
 }
 
 .destination-card, .rocket-card {
+  border: 1px solid grey;
+  border-radius: 10px;
   margin: 1%;
   text-align: center;
 }
@@ -19,7 +26,7 @@
 .destination-card {
   margin-top: 10%;
   width: 160px;
-  height: 300px;
+  height: 200px;
 }
 
 .destination_p {

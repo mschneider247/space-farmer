@@ -26,6 +26,7 @@ button {
   transition-property: background;
   transition-duration: 0.2s;
   transition-timing-function: linear;
+  box-shadow: 2px 1px 5px 1px black;
 }
 
 input, button {

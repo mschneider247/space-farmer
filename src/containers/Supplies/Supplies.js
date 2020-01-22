@@ -57,7 +57,7 @@ export class Supplies extends Component {
           <p>{supply.name}</p>
           <p>$ {supply.cost}</p>
           <p>{supply.weight} lbs</p>
-          <img class="supply_card_image" src={supply.imageURL} alt={supply.name}/>
+          <img className="supply_card_image" src={supply.imageURL} alt={supply.name}/>
         </div>
       )
     })
