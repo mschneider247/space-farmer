@@ -16,9 +16,11 @@ img {
 }
 
 .supplies {
+  margin-left: 5%;
+  margin-bottom: 15%;
+  padding: 5%;
   display: flex;
   flex-wrap: wrap;
-  max-width: 1000px;
 }
 
 .supply-card {
@@ -27,7 +29,7 @@ img {
   padding: 0 2% 2% 2%;
   border: 1px solid darkgreen;
   border-radius: 10px;
-  width: 20%;
+  width: 200px;
   height: 250px;
 }
 
@@ -37,17 +39,18 @@ img {
 }
 
 .supply-footer {
-  width: 30%;
+  width: 300px;
   padding: 1%;
   position: fixed;
-  top: 23%;
-  right: 2%;
+  bottom: 5%;
+  left: -1%;
   margin-left: 12%;
   display: flex;
   flex-direction: column;
   background-color: #5e5e5e;
   border: 1px solid green;
   border-radius: 10px;
+  box-shadow: -4px 0px 10px 2px black;
 }
 
 #totalcost, #totalweight{
@@ -55,6 +58,10 @@ img {
   font-size: 18px;
   text-align: center;
   background: transparent;
+}
+
+#pick_supplies {
+  margin-left: 8%;
 }
 
 .footer-text, .footer-btn, a {

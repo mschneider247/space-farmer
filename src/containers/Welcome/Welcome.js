@@ -39,7 +39,7 @@ export class Welcome extends Component {
     let reRoute = this.checkLogin();
     return (
       <div className="div_welcome">
-        <h3 id="pre_title">You are the</h3>
+        <h2 id="pre_title">You are the</h2>
         <h1 id="title">SPACE <span className="farmer">FARMER</span></h1>
         <div className="div_name-input">
           <input
