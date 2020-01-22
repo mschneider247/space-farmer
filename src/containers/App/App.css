@@ -3,9 +3,8 @@
 }
 
 main {
-  height: 900px;
-  width: 100%;
   background-image: url('../../images/stars.jpg');
+  margin-bottom: 200px;
 }
 
 .farmer {
