@@ -5,6 +5,12 @@
   border-bottom: 3px solid grey;
 }
 
+.destination_image {
+  width: 160px;
+  height: 160px;
+  border-radius: 10px;
+}
+
 .destination-card, .rocket-card {
   margin: 1%;
   text-align: center;

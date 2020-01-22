@@ -63,27 +63,27 @@ export class Rockets extends Component {
         <section className="destinations">
            <div className="destination-card">
             <p className="destination_p">Low Earth Orbit</p>
-            <img src={LEO} alt="LEO" />
+            <img className="destination_image" src={LEO} alt="LEO" />
             <input className="destination_input" onClick={() =>{ this.handleDestination("leo")}} type="radio" name="destination" value="leo" />
           </div>
           <div className="destination-card">
             <p className="destination_p">Geostationary Transfer Orbit</p>
-            <img src={GTO} alt="GTO" />
+            <img className="destination_image" src={GTO} alt="GTO" />
             <input className="destination_input" onClick={() =>{ this.handleDestination("gto")}} type="radio" name="destination" value="gto" />
           </div>
           <div className="destination-card">
             <p className="destination_p">Moon</p>
-            <img src={moon} alt="Moon" />
+            <img className="destination_image" src={moon} alt="Moon" />
             <input className="destination_input" onClick={() =>{ this.handleDestination("moon")}} type="radio" name="destination" value="moon" />
           </div>
           <div className="destination-card">
             <p className="destination_p">Mars</p>
-            <img src={mars} alt="Mars" />
+            <img className="destination_image" src={mars} alt="Mars" />
             <input className="destination_input" onClick={() =>{ this.handleDestination("mars")}} type="radio" name="destination" value="mars" />
           </div>
           <div className="destination-card">
             <p className="destination_p">Pluto</p>
-            <img src={pluto} alt="Pluto" />
+            <img className="destination_image" src={pluto} alt="Pluto" />
             <input className="destination_input" onClick={() =>{ this.handleDestination("pluto")}} type="radio" name="destination" value="pluto" />
           </div>
         </section>
