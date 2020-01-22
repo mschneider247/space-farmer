@@ -4,11 +4,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { addRocketChoice, addDestination } from '../../actions';
 import './Rockets.css';
-import LEO from '../../images/LEO.jpg';
-import GTO from '../../images/GTO.jpg';
-import moon from '../../images/moon.jpg';
-import mars from '../../images/mars.jpg';
-import pluto from '../../images/pluto.png';
+import destinationData from './destinationData';
 
 export class Rockets extends Component {
   constructor() {
@@ -19,7 +15,11 @@ export class Rockets extends Component {
     };
   }
 
-  handleDestination = (destination) => {
+  handleDestination = (destination, picked) => {
+    destinationData.forEach(destination => {
+      destination.isChosen = false;
+    })
+    picked.isChosen = true;
     this.setState({ destination: destination })
     this.props.addDestination(destination)
   }
@@ -27,6 +27,21 @@ export class Rockets extends Component {
   handleRocket = (rocket) => {
     this.setState({ rocketChoice: rocket.name });
     this.props.addRocketChoice(rocket);
+  }
+
+  createDestinations = () => {
+    return destinationData.map((destination, index) => {
+      let chosen = 'destination-card';
+      if (destination.isChosen) {
+        chosen = 'chosen-card';
+      }
+      return (
+        <div key={index} className={chosen} onClick={() =>{ this.handleDestination(destination.destination, destination)}}>
+          <p className="destination_p">{destination.text}</p>
+          <img className="destination_image" src={destination.imageURL} alt="LEO" />
+        </div>
+      )
+    })
   }
 
   createRockets = (availableRockets) => {
@@ -61,26 +76,7 @@ export class Rockets extends Component {
       <>
         <h2 id="where_prompt">Where do you want to go?</h2>
         <section className="destinations">
-          <div className="destination-card" onClick={() =>{ this.handleDestination("leo")}}>
-            <p className="destination_p">Low Earth Orbit</p>
-            <img className="destination_image" src={LEO} alt="LEO" />
-          </div>
-          <div className="destination-card" onClick={() =>{ this.handleDestination("gto")}}>
-            <p className="destination_p">Geostationary Transfer Orbit</p>
-            <img className="destination_image" src={GTO} alt="GTO" />
-          </div>
-          <div className="destination-card" onClick={() =>{ this.handleDestination("moon")}}>
-            <p className="destination_p">Moon</p>
-            <img className="destination_image" src={moon} alt="Moon" />
-          </div>
-          <div className="destination-card" onClick={() =>{ this.handleDestination("mars")}}>
-            <p className="destination_p">Mars</p>
-            <img className="destination_image" src={mars} alt="Mars" />
-          </div>
-          <div className="destination-card" onClick={() =>{ this.handleDestination("pluto")}}>
-            <p className="destination_p">Pluto</p>
-            <img className="destination_image" src={pluto} alt="Pluto" />
-          </div>
+          {this.createDestinations()}
         </section>
         <section className="rockets">
           {this.props.proposals[this.props.proposals.length -1].destination ? 
