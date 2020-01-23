@@ -9,6 +9,10 @@
   flex-wrap: wrap;
 }
 
+.rockets {
+  margin-bottom: 25%;
+}
+
 .destinations {
   margin-top: -50px;
   margin-bottom: 5%;
@@ -66,7 +70,7 @@
 }
 
 .rocket-footer_h3 {
-  color: black;
+  color: white;
 }
 
 .rocket-footer {
@@ -78,9 +82,10 @@
   margin-left: 12%;
   display: flex;
   flex-direction: column;
-  background-color: #5e5e5e;
+  background-color: rgba(0, 0, 0, 80%);
   border: 1px solid green;
   border-radius: 10px;
   text-align: center;
   box-shadow: -4px 0px 10px 2px black;
+  font-weight: 900;
 }

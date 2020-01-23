@@ -48,11 +48,10 @@ export class Rockets extends Component {
   createRockets = (availableRockets) => {
     return availableRockets.map(rocket => {
       return (
-        <div className="rocket-card" key={rocket.id}>
+        <div className="rocket-card" key={rocket.id} onClick={() =>{this.handleRocket(rocket)}}>
           <img className="rocket_image" src={rocket.image} alt={rocket.name}/>
           <p>{rocket.name}</p>
           <p>${rocket.cost}</p>
-          <input className="rocket_input" onClick={() =>{this.handleRocket(rocket)}} type="radio" name="chooseRocket" value={rocket.name}/>
         </div>
       )
     })
@@ -70,6 +69,12 @@ export class Rockets extends Component {
     })
     let mappedRockets = this.createRockets(availableRockets);
     return mappedRockets
+  }
+
+  clearChoices = () => {
+    destinationData.forEach(destination => {
+      destination.isChosen = false;
+    })
   }
 
   render() {
@@ -92,7 +97,7 @@ export class Rockets extends Component {
           <h3 className = "rocket-footer_h3">Rocket Choice:  
             {this.state.rocketChoice}
           </h3>
-          {(this.state.destination !== '' && this.state.rocketChoice !== '') ? <Link to='/overview'><button >Continue To Overview</button></Link> : null}
+          {(this.state.destination !== '' && this.state.rocketChoice !== '') ? <Link to='/overview'><button onClick={this.clearChoices}>Continue To Overview</button></Link> : null}
         </section>
       </>
     )

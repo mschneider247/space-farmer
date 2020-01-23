@@ -54,14 +54,15 @@ h4 {
   margin-left: 8%;
   display: flex;
   flex-direction: column;
-  background-color: #5e5e5e;
+  background-color: rgba(0, 0, 0, 80%);
   border: 1px solid green;
   border-radius: 10px;
+  font-weight: 900;
   box-shadow: -4px 0px 10px 2px black;
 }
 
 #totalcost, #totalweight{
-  color: black;
+  color: white;
   font-size: 18px;
   text-align: center;
   background: transparent;
