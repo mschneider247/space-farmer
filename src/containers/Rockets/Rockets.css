@@ -1,19 +1,56 @@
+#where_prompt {
+  margin-left: 8%;
+}
+
 .destinations, .rockets {
-  width: 1100px;
+  width: 100%;
   margin-left: 3%;
   display: flex;
-  border-bottom: 3px solid grey;
+  flex-wrap: wrap;
+}
+
+.rockets {
+  margin-bottom: 25%;
+}
+
+.destinations {
+  margin-top: -50px;
+  margin-bottom: 5%;
+}
+
+.destination_image {
+  width: 140px;
+  height: 140px;
+  border-radius: 80px;
 }
 
 .destination-card, .rocket-card {
+  background: rgba(0, 0, 0, 50%);
+  border: 1px solid darkgreen;
+  border-radius: 10px;
   margin: 1%;
   text-align: center;
 }
 
-.destination-card {
+.destination-card:hover, .rocket-card:hover {
+  transform: scale(0.99);
+  cursor: pointer;
+}
+
+.chosen-card {
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin: 1%;
+  text-align: center;
+  border: 1px solid black;
+  box-shadow: -4px 0px 10px 2px black;
+  background: darkslategray;
+}
+
+.destination-card, .chosen-card {
   margin-top: 10%;
   width: 160px;
-  height: 300px;
+  height: 200px;
 }
 
 .destination_p {
@@ -33,20 +70,22 @@
 }
 
 .rocket-footer_h3 {
-  color: black;
+  color: white;
 }
 
 .rocket-footer {
+  position: fixed;
+  bottom: 5%;
+  left: -1%;
   width: 30%;
   padding: 1%;
-  position: fixed;
-  top: 14%;
-  right: 2%;
   margin-left: 12%;
   display: flex;
   flex-direction: column;
-  background-color: grey;
-  border: 1px solid lime;
+  background-color: rgba(0, 0, 0, 80%);
+  border: 1px solid green;
   border-radius: 10px;
   text-align: center;
+  box-shadow: -4px 0px 10px 2px black;
+  font-weight: 900;
 }

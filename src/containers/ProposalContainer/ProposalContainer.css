@@ -1,23 +1,44 @@
 .space-background {
-  background-image: url('../../images/spacefarm.jpg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  min-height: 600px;
+  float: left;
+  animation: x 13s linear infinite alternate;
+}
+
+#space_pig {
+  height: 300px;
+  animation: y 17s linear infinite alternate;
+}
+
+@keyframes x {
+  100% {
+    transform: translateX(calc(80vw - 50px));
+  }
+}
+
+@keyframes y {
+  100% {
+    transform: translateY(calc(40vh - 50px));
+  }
 }
 
 .proposal-container {
   display: flex;
   margin-left: 8%;
+  text-align: center;
+  height: 0px;
 }
 
 .proposal-card {
+  position: relative;
+  z-index: 1;
   text-align: center;
   padding: 1%;
   margin: 1%;
   width: 200px;
-  border: 2px solid grey;
-  background-color: rgba(100, 100, 100, 50%);
+  height: 220px;
+  border: 2px solid black;
+  background-color: rgba(0, 0, 0, 50%);
   border-radius: 10px;
+  box-shadow: -4px 0px 10px 2px black;
 }
 
 h3 {
@@ -29,9 +50,18 @@ h3 {
 }
 
 .create_btn {
+  margin-right: 50%;
+  position: relative;
+  z-index: 1000;
   margin-top: 5%;
 }
 
 .red-text {
   color: red;
+}
+
+#extra_create_btn {
+  position: fixed;
+  left: 20%;
+  bottom: 50px;
 }

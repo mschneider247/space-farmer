@@ -4,6 +4,8 @@ import './ProposalContainer.css';
 import { connect } from 'react-redux';
 import { addProposal } from '../../actions/index.js';
 import PropTypes from 'prop-types';
+import spacePig from '../../images/spacePig.png';
+import numFormater from '../../helper/helper'
 
 export class ProposalContainer extends Component {
   constructor() {
@@ -33,26 +35,37 @@ export class ProposalContainer extends Component {
 
   render() {
     const proposals = this.props.proposals.map(proposal => {
+      let cost;
+      if (proposal.finalCost) {
+        cost = numFormater(proposal.finalCost)
+      }
       return (
         <article className="proposal-card" key={proposal.id}>
           <h3>Proposal# {proposal.id}</h3>
-          <h3>Final Cost $$ {proposal.finalCost}</h3>
+          <h3>Final Cost $$ {cost}</h3>
           <h3 className="red-text">PROPOSAL REJECTED</h3>
         </article>
       )
-    })
+    });
+
+    const createProposal = (
+        <section className="section_create">
+          <button onClick={(event) => this.handleClick(event)} className="create_btn">Create Proposal</button>
+        </section>
+    )
 
     return (
       <section>
       {this.checkProposalCreation()}
+        <section className="proposal-container">
+          {proposals.length === 0 ? <h3>Start a new proposal! {createProposal}</h3> : proposals}
+        </section>
         <section className="space-background">
-          <section className="proposal-container">
-            {proposals.length === 0 ? <h3>Start a new proposal below!</h3> : proposals}
-          </section>
+          <img id="space_pig" src={spacePig} alt="Pig in Space"/>
         </section>
-        <section className="section_create">
-          <button onClick={(event) => this.handleClick(event)} className="create_btn">Create Proposal</button>
-        </section>
+          <div id="extra_create_btn">
+            {proposals.length === 0 ? null : createProposal}
+          </div>
       </section>
     )
   }

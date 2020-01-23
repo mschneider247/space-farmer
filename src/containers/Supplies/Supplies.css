@@ -2,7 +2,7 @@ h4 {
   margin-left: 350px;
 }
 
-img {
+.supply_card_image {
   width: 100%;
   height: 52%;
   border-radius: 20px;
@@ -24,7 +24,6 @@ img {
 
 .supplies {
   margin-left: 5%;
-  margin-bottom: 15%;
   padding: 5%;
   display: flex;
   flex-wrap: wrap;
@@ -55,14 +54,15 @@ img {
   margin-left: 8%;
   display: flex;
   flex-direction: column;
-  background-color: #5e5e5e;
+  background-color: rgba(0, 0, 0, 80%);
   border: 1px solid green;
   border-radius: 10px;
+  font-weight: 900;
   box-shadow: -4px 0px 10px 2px black;
 }
 
 #totalcost, #totalweight{
-  color: black;
+  color: white;
   font-size: 18px;
   text-align: center;
   background: transparent;

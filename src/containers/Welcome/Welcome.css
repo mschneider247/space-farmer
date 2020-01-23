@@ -7,6 +7,7 @@
   flex-direction: column;
   padding: 10%;
   align-items: center;
+  background-color: black;
 }
 
 .div_name-input {
@@ -25,6 +26,7 @@ button {
   transition-property: background;
   transition-duration: 0.2s;
   transition-timing-function: linear;
+  box-shadow: 2px 1px 5px 1px black;
 }
 
 input, button {
@@ -43,9 +45,8 @@ button:hover {
   color: white;
   transform: scale(0.99);
   cursor: pointer;
-  font-size: 0.7em;
   font-weight: 900;
-  box-shadow: -2px -1px 5px 1px black;
+  box-shadow: -1px -1px 1px 0px black;
   border: 1px solid black;
 }
 
