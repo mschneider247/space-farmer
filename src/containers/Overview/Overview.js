@@ -21,7 +21,8 @@ export class Overview extends Component{
     let currentProposal = this.props.proposals[this.props.proposals.length - 1]
     let numberOfLaunches = this.numberOfRockets(currentProposal)
     let launchCost = numFormater(numberOfLaunches * currentProposal.rocket.cost)
-    let totalCost = numFormater((numberOfLaunches * currentProposal.rocket.cost) + currentProposal.supplies.supplyCost)
+    let totalCost = (numberOfLaunches * currentProposal.rocket.cost) + currentProposal.supplies.supplyCost
+    let printTotalCost = numFormater(totalCost)
 
     return (
       <section className="overview-box">
@@ -38,7 +39,7 @@ export class Overview extends Component{
         <p>{numberOfLaunches} {currentProposal.rocket.name} will cost</p>
         <p>$ {launchCost}</p>
         <br></br>
-        <p>For a total cost of $$ {totalCost}</p>
+        <p>For a total cost of $$ {printTotalCost}</p>
         <h3 className="red-text">PROPOSAL: REJECTED</h3>
         <Link to='/proposals'><button onClick={() => this.updateProposal(totalCost)}>Try Again!</button></Link>
       </section>
