@@ -5,6 +5,7 @@ import './Supplies.css';
 import PropTypes from 'prop-types';
 import { addSupplies } from '../../actions';
 import supplyData from './supplyData';
+import numFormater from '../../helper/helper';
 
 export class Supplies extends Component {
   constructor() {
@@ -60,7 +61,9 @@ export class Supplies extends Component {
           <img className="supply_card_image" src={supply.imageURL} alt={supply.name}/>
         </div>
       )
-    })
+    });
+
+    let totalWeight = numFormater(this.state.supplyWeight);
 
     return (
       <section>
@@ -74,7 +77,7 @@ export class Supplies extends Component {
           <div className="footer-text">
             <p id="totalcost">Total Cost: <span className="symbols">$</span> {this.state.supplyCost}</p>
             <p id="totalweight">
-              Total Weight: {this.state.supplyWeight} 
+              Total Weight: {totalWeight} 
               <span className="symbols"> lbs</span>
             </p>
           </div>
