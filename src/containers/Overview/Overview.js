@@ -20,6 +20,7 @@ export class Overview extends Component{
   render() {
     let currentProposal = this.props.proposals[this.props.proposals.length - 1]
     let numberOfLaunches = this.numberOfRockets(currentProposal)
+    let supplyCost = numFormater(currentProposal.supplies.supplyCost)
     let launchCost = numFormater(numberOfLaunches * currentProposal.rocket.cost)
     let totalCost = (numberOfLaunches * currentProposal.rocket.cost) + currentProposal.supplies.supplyCost
     let printTotalCost = numFormater(totalCost)
@@ -28,8 +29,12 @@ export class Overview extends Component{
       <section className="overview-box">
         <h3>Overview</h3>
         <p>Proposal# {currentProposal.id}</p>
-        <p>Supply Cost: {currentProposal.supplies.supplyCost}</p>
-        <p>Supply Weight: {currentProposal.supplies.supplyWeight}</p>
+        <p>Supply Cost: <span className="symbols">$</span>
+          {supplyCost}
+        </p>
+        <p>Supply Weight: {currentProposal.supplies.supplyWeight}
+          <span className="symbols">lbs</span>
+        </p>
         <p>Destination: {currentProposal.destination}</p>
         <p>Rocket Choice: {currentProposal.rocket.name}</p>
         <br></br>
