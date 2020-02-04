@@ -3,5 +3,11 @@
 }
 
 .overview-box {
+  border-radius: 20px;
+  padding: 1% 2% 2% 4%;
+  width: 30%;
+  background-color: rgba(0, 0, 0, 80%);
+  border: 1px solid green;
   margin-left: 10%;
+  font-size: 1.2em;
 }
