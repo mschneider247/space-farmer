@@ -64,6 +64,7 @@ export class Supplies extends Component {
     });
 
     let totalWeight = numFormater(this.state.supplyWeight);
+    let totalCost = numFormater(this.state.supplyCost);
 
     return (
       <section>
@@ -75,7 +76,8 @@ export class Supplies extends Component {
         </section>
         <div className="supply-footer">
           <div className="footer-text">
-            <p id="totalcost">Total Cost: <span className="symbols">$</span> {this.state.supplyCost}</p>
+            <p id="totalcost">
+              Total Cost: <span className="symbols">$</span> {totalCost}</p>
             <p id="totalweight">
               Total Weight: {totalWeight} 
               <span className="symbols"> lbs</span>
