@@ -19,7 +19,7 @@ export class Welcome extends Component {
     this.setState({ [event.target.name]: event.target.value})
   }
 
-  handleClick = async (event) => {
+  handleClick = async () => {
     if (this.state.name === ''){
       await this.setState({ noName: true })
     } else {
@@ -49,8 +49,13 @@ export class Welcome extends Component {
             type="text" 
             placeholder="Enter Your Name"
             onChange={this.updateName}
+            onKeyUp={(event) => {
+              if (event.keyCode === 13) {
+                this.handleClick();
+              }
+            }}
           />
-          <button onClick={(event) => this.handleClick(event)}>Start Farming!</button>
+          <button onClick={this.handleClick}>Start Farming!</button>
           {this.state.noName ? <p id="no_name_error">Please Enter a Name</p> : null}
         </div>
         {reRoute}
