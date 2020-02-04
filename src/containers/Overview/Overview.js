@@ -39,7 +39,8 @@ export class Overview extends Component{
         <p>Destination: {currentProposal.destination}</p>
         <p>Rocket Choice: {currentProposal.rocket.name}</p>
         <br></br>
-        <p>Your payload of {currentProposal.supplies.supplyWeight}lbs will take</p>
+        <p>Your payload of {currentProposal.supplies.supplyWeight}
+          <span className="symbols"> lbs</span> will take</p>
         <p>{numberOfLaunches} launches of {currentProposal.rocket.name}</p>
         <br></br>
         <p>{numberOfLaunches} {currentProposal.rocket.name} will cost</p>
