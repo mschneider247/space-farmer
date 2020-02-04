@@ -3,5 +3,9 @@
 }
 
 .overview-box {
+  width: 30%;
+  background-color: rgba(0, 0, 0, 80%);
+  border: 1px solid green;
   margin-left: 10%;
+  font-size: 1.2em;
 }

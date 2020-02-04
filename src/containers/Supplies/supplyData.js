@@ -88,7 +88,7 @@ const supplyData = [
     id: 10,
     name: 'Carrots',
     cost: 1,
-    weight: 0.5,
+    weight: 1,
     imageURL: carrots,
     isChosen: false,
   },
