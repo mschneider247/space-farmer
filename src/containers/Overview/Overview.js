@@ -21,7 +21,7 @@ export class Overview extends Component{
     let currentProposal = this.props.proposals[this.props.proposals.length - 1]
     let numberOfLaunches = this.numberOfRockets(currentProposal)
     let launchCost = numFormater(numberOfLaunches * currentProposal.rocket.cost)
-    let totalCost = num((numberOfLaunches * currentProposal.rocket.cost) + currentProposal.supplies.supplyCost)
+    let totalCost = numFormater((numberOfLaunches * currentProposal.rocket.cost) + currentProposal.supplies.supplyCost)
 
     return (
       <section className="overview-box">
