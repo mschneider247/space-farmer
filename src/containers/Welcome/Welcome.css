@@ -63,6 +63,7 @@ button:hover {
   font-size: 4.5em;
 }
 
-h1, h2, h3, h4, h5:hover {
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover {
+  color: rgba(160, 160, 160, 0.5);
   cursor: none;
 }
