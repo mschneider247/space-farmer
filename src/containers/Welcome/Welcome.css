@@ -7,7 +7,10 @@
   flex-direction: column;
   padding: 10%;
   align-items: center;
-  background-color: black;
+  background: rgba(0, 0, 0, 50%);
+  border: 1px solid darkgreen;
+  border-radius: 10px;
+  box-shadow: -4px 0px 10px 2px black;
 }
 
 .div_name-input {
@@ -58,4 +61,8 @@ button:hover {
 #title {
   margin-top: 0px;
   font-size: 4.5em;
+}
+
+h1, h2, h3, h4, h5:hover {
+  cursor: none;
 }

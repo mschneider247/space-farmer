@@ -56,8 +56,14 @@ export class Supplies extends Component {
       return (
         <div className={chosen} key={supply.id} onClick={() => this.handleSupplies(supply.id)}>
           <p>{supply.name}</p>
-          <p>$ {supply.cost}</p>
-          <p>{supply.weight} lbs</p>
+          <p>
+            <span className="symbols"> $ </span>
+            {numFormater(supply.cost)}
+          </p>
+          <p>
+            {numFormater(supply.weight)}
+            <span className="symbols"> lbs</span>
+          </p>
           <img className="supply_card_image" src={supply.imageURL} alt={supply.name}/>
         </div>
       )
