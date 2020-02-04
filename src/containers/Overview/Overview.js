@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import './Overview.css';
 import { addProposalFinalCost } from '../../actions';
 import PropTypes from 'prop-types';
+import numFormater from '../../helper/helper'
 
 export class Overview extends Component{
 
@@ -19,8 +20,9 @@ export class Overview extends Component{
   render() {
     let currentProposal = this.props.proposals[this.props.proposals.length - 1]
     let numberOfLaunches = this.numberOfRockets(currentProposal)
-    let launchCost = numberOfLaunches * currentProposal.rocket.cost
-    let totalCost = launchCost + currentProposal.supplies.supplyCost
+    let launchCost = numFormater(numberOfLaunches * currentProposal.rocket.cost)
+    let totalCost = num((numberOfLaunches * currentProposal.rocket.cost) + currentProposal.supplies.supplyCost)
+
     return (
       <section className="overview-box">
         <h3>Overview</h3>
