@@ -39,14 +39,18 @@ export class Overview extends Component{
         <p>Destination: {currentProposal.destination}</p>
         <p>Rocket Choice: {currentProposal.rocket.name}</p>
         <br></br>
-        <p>Your payload of {currentProposal.supplies.supplyWeight}
+        <p>Your payload of {supplyWeight}
           <span className="symbols"> lbs</span> will take</p>
         <p>{numberOfLaunches} launches of {currentProposal.rocket.name}</p>
         <br></br>
         <p>{numberOfLaunches} {currentProposal.rocket.name} will cost</p>
-        <p>$ {launchCost}</p>
+        <p>
+          <span className="symbols"> $</span> {launchCost}</p>
         <br></br>
-        <p>For a total cost of $$ {printTotalCost}</p>
+        <h3>For a total cost of
+           <span className="symbols"> $$ </span> 
+           {printTotalCost}
+        </h3>
         <h3 className="red-text">PROPOSAL: REJECTED</h3>
         <Link to='/proposals'><button onClick={() => this.updateProposal(totalCost)}>Try Again!</button></Link>
       </section>
