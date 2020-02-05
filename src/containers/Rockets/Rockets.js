@@ -5,12 +5,14 @@ import { connect } from 'react-redux';
 import { addRocketChoice, addDestination } from '../../actions';
 import './Rockets.css';
 import destinationData from './destinationData';
+import numFormater from '../../helper/helper';
 
 export class Rockets extends Component {
   constructor() {
     super();
     this.state = {
       destination: '',
+      distance: 0,
       rocketChoice: '',
     };
   }
@@ -22,6 +24,7 @@ export class Rockets extends Component {
     picked.isChosen = true;
     let pickedString = ' ' + picked.text
     this.setState({ destination: pickedString })
+    this.setState({ distance: picked.distance })
     this.props.addDestination(destination)
   }
 
@@ -47,11 +50,12 @@ export class Rockets extends Component {
 
   createRockets = (availableRockets) => {
     return availableRockets.map(rocket => {
+      let cost = numFormater(rocket.cost)
       return (
         <div className="rocket-card" key={rocket.id} onClick={() =>{this.handleRocket(rocket)}}>
           <img className="rocket_image" src={rocket.image} alt={rocket.name}/>
           <p>{rocket.name}</p>
-          <p>${rocket.cost}</p>
+          <p><span className="symbols">$ </span>{cost}</p>
         </div>
       )
     })
@@ -78,6 +82,8 @@ export class Rockets extends Component {
   }
 
   render() {
+    let avgDistance = numFormater(this.state.distance)
+
     return (
       <>
         <h2 id="where_prompt">Where do you want to go?</h2>
@@ -93,6 +99,9 @@ export class Rockets extends Component {
         <section className="rocket-footer">
           <h3 className="rocket-footer_h3">Destination:
             {this.state.destination}
+          </h3>
+          <h3 className="rocket-footer_h3">Average Distance: 
+            {avgDistance}<span className="symbols"> miles</span>
           </h3>
           <h3 className = "rocket-footer_h3">Rocket Choice:  
             {this.state.rocketChoice}
