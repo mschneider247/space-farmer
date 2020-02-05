@@ -12,5 +12,10 @@ main {
 }
 
 .farmer:hover {
+  cursor: default;
   color: greenyellow;
+}
+
+h1:hover, p:hover {
+  cursor: default;
 }

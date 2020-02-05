@@ -61,7 +61,7 @@ export class ProposalContainer extends Component {
       <section>
       {this.checkProposalCreation()}
         <section className="proposal-container">
-          {proposals.length === 0 ? <h3>Start a new proposal! {createProposal}</h3> : proposals}
+          {proposals.length === 0 ? <div><h3 id="prompt">Start a new proposal! </h3>{createProposal}</div> : proposals}
         </section>
         <section className="space-background">
           <img id="space_pig" src={spacePig} alt="Pig in Space"/>
