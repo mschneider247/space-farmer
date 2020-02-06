@@ -10,7 +10,7 @@
 }
 
 .rockets {
-  margin-bottom: 25%;
+  margin-bottom: 30%;
 }
 
 .destinations {
@@ -38,13 +38,22 @@
 }
 
 .chosen-card {
-  border: 1px solid grey;
   border-radius: 10px;
   margin: 1%;
   text-align: center;
   border: 1px solid black;
   box-shadow: -4px 0px 10px 2px black;
   background: darkslategray;
+}
+
+.chosen-rocket {
+  border: 1px solid black;
+  box-shadow: -4px 0px 10px 2px black;
+  background: darkslategray;
+  border-radius: 10px;
+  margin: 1%;
+  text-align: center;
+  width: 220px;
 }
 
 .destination-card, .chosen-card {
@@ -63,6 +72,8 @@
 
 .rocket_image {
   height: 420px;
+  margin-top: 5%;
+  border-radius: 10px;
 }
 
 .destination_input, .rocket_input {

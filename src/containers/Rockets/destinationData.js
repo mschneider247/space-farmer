@@ -11,6 +11,7 @@ const destinationData = [
     text: 'Low Earth Orbit',
     imageURL: LEO,
     isChosen: false,
+    distance: 600,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const destinationData = [
     text: 'Geostationary Transfer Orbit',
     imageURL: GTO,
     isChosen: false,
+    distance: 22236,
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const destinationData = [
     text: 'Moon',
     imageURL: moon,
     isChosen: false,
+    distance: 238900,
   },
   {
     id: 4,
@@ -32,6 +35,7 @@ const destinationData = [
     text: 'Mars',
     imageURL: mars,
     isChosen: false,
+    distance: 140000000,
   },
   {
     id: 5,
@@ -39,6 +43,7 @@ const destinationData = [
     text: 'Pluto',
     imageURL: pluto,
     isChosen: false,
+    distance: 3648520000
   }
 ];
 
