@@ -16,7 +16,7 @@ const destinationData = [
   {
     id: 2,
     destination: 'gto',
-    text: 'Geostationary Transfer Orbit',
+    text: 'Geosynchronous Transfer Orbit',
     imageURL: GTO,
     isChosen: false,
     distance: 22236,
