@@ -30,7 +30,9 @@ export class Rockets extends Component {
   }
 
   handleRocket = (rocket) => {
+    console.log("Rocket :: ", rocket);
     this.setState({ rocketChoice: rocket.name });
+    this.setState({ cost: rocket.cost});
     this.props.addRocketChoice(rocket);
   }
 
@@ -51,9 +53,14 @@ export class Rockets extends Component {
 
   createRockets = (availableRockets) => {
     return availableRockets.map(rocket => {
+      rocket.isChosen = false;
+      let chosen = 'rocket-card';
+      if (rocket.isChosen) {
+        chosen = 'chosen-rocket'
+      }
       let cost = numFormater(rocket.cost)
       return (
-        <div className="rocket-card" key={rocket.id} onClick={() =>{this.handleRocket(rocket)}}>
+        <div className={chosen} key={rocket.id} onClick={() =>{this.handleRocket(rocket)}}>
           <img className="rocket_image" src={rocket.image} alt={rocket.name}/>
           <p>{rocket.name}</p>
           <p><span className="symbols">$ </span>{cost}</p>
@@ -83,7 +90,8 @@ export class Rockets extends Component {
   }
 
   render() {
-    let avgDistance = numFormater(this.state.distance)
+    let avgDistance = numFormater(this.state.distance);
+    let cost = numFormater(this.state.cost);
 
     return (
       <>
@@ -107,12 +115,13 @@ export class Rockets extends Component {
               </h3>
             </div> 
           : null}
-          <h3 className = "rocket-footer_h3">Rocket Choice:
-            {" " + this.state.rocketChoice}
-          </h3>
-          <h3 className = "rocket-footer_h3">Cost per flight:
-            {" " + this.state.rocketChoice}
-          </h3>
+          {(this.state.rocketChoice !== '') ?
+            <div>
+              <h3 className = "rocket-footer_h3">Rocket Choice:
+                {" " + this.state.rocketChoice}
+              </h3>
+            </div>
+          : null}
           {(this.state.destination !== '' && this.state.rocketChoice !== '') ? <Link to='/overview'><button onClick={this.clearChoices}>Continue To Overview</button></Link> : null}
         </section>
       </>
