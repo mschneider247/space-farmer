@@ -21,14 +21,14 @@ export class Rockets extends Component {
 
   handleDestination = (destination, picked) => {
     this.clearChoices();
+    this.setState({ rocketChoice: '' })
     picked.isChosen = true;
-    let pickedString = ' ' + picked.text
-    this.setState({ destination: pickedString })
+    this.setState({ destination: picked.text })
     this.setState({ distance: picked.distance })
     this.props.addDestination(destination)
   }
 
-  handleRocket = async (rocket) => {
+  handleRocket = (rocket) => {
     rocketData.forEach(rocket => {
       rocket.isChosen = false;
     });
@@ -57,16 +57,19 @@ export class Rockets extends Component {
     return availableRockets.map(rocket => {
       let chosen = 'rocket-card';
       if (rocket.isChosen) {
-        console.log("ROCket CHosen!!")
         chosen = 'chosen-rocket';
       }
       let cost = numFormater(rocket.cost)
-      console.log("className is :: ", chosen)
+      let payload = numFormater(rocket.payloads.find(payload => {
+        return payload.name === this.state.destination
+      }).lb)
       return (
         <div className={chosen} key={rocket.id} onClick={() =>{this.handleRocket(rocket)}}>
           <img className="rocket_image" src={rocket.image} alt={rocket.name}/>
           <p>{rocket.name}</p>
           <p><span className="symbols">$ </span>{cost}</p>
+          <p>Payload to {this.state.destination}:</p>
+          <p>{payload} <span className="symbols">lbs</span></p>
         </div>
       )
     })
@@ -114,7 +117,7 @@ export class Rockets extends Component {
           {(this.state.destination !== '') ?
             <div>
               <h3 className="rocket-footer_h3">Destination:
-                {this.state.destination}
+                {" " + this.state.destination}
               </h3>
               <h3 className="rocket-footer_h3">Average Distance: {" " + avgDistance} <span className="symbols"> miles</span>
               </h3>
