@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { addRocketChoice, addDestination } from '../../actions';
 import './Rockets.css';
 import destinationData from './destinationData';
+import rocketData from './rocketData';
 import numFormater from '../../helper/helper';
 
 export class Rockets extends Component {
@@ -72,13 +73,20 @@ export class Rockets extends Component {
   getAvailableRockets = () => {
     let currentDestination = this.props.proposals[this.props.proposals.length - 1].destination;
     let availableRockets = [];
-    this.props.rockets.forEach(rocket => {
+    rocketData.forEach(rocket => {
       rocket.payloads.forEach(payload => {
-        if (payload.id === currentDestination){
+        if (payload.id === currentDestination) {
           availableRockets.push(rocket);
-        }
-      })
-    })
+        };
+      });
+    });
+    // this.props.rockets.forEach(rocket => {
+    //   rocket.payloads.forEach(payload => {
+    //     if (payload.id === currentDestination){
+    //       availableRockets.push(rocket);
+    //     }
+    //   })
+    // })
     let mappedRockets = this.createRockets(availableRockets);
     return mappedRockets
   }
@@ -91,7 +99,6 @@ export class Rockets extends Component {
 
   render() {
     let avgDistance = numFormater(this.state.distance);
-    let cost = numFormater(this.state.cost);
 
     return (
       <>
