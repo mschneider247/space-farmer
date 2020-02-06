@@ -20,9 +20,7 @@ export class Rockets extends Component {
   }
 
   handleDestination = (destination, picked) => {
-    destinationData.forEach(destination => {
-      destination.isChosen = false;
-    })
+    this.clearChoices();
     picked.isChosen = true;
     let pickedString = ' ' + picked.text
     this.setState({ destination: pickedString })
@@ -30,8 +28,11 @@ export class Rockets extends Component {
     this.props.addDestination(destination)
   }
 
-  handleRocket = (rocket) => {
-    console.log("Rocket :: ", rocket);
+  handleRocket = async (rocket) => {
+    rocketData.forEach(rocket => {
+      rocket.isChosen = false;
+    });
+    rocket.isChosen = true;
     this.setState({ rocketChoice: rocket.name });
     this.setState({ cost: rocket.cost});
     this.props.addRocketChoice(rocket);
@@ -54,12 +55,13 @@ export class Rockets extends Component {
 
   createRockets = (availableRockets) => {
     return availableRockets.map(rocket => {
-      rocket.isChosen = false;
       let chosen = 'rocket-card';
       if (rocket.isChosen) {
-        chosen = 'chosen-rocket'
+        console.log("ROCket CHosen!!")
+        chosen = 'chosen-rocket';
       }
       let cost = numFormater(rocket.cost)
+      console.log("className is :: ", chosen)
       return (
         <div className={chosen} key={rocket.id} onClick={() =>{this.handleRocket(rocket)}}>
           <img className="rocket_image" src={rocket.image} alt={rocket.name}/>
@@ -80,13 +82,6 @@ export class Rockets extends Component {
         };
       });
     });
-    // this.props.rockets.forEach(rocket => {
-    //   rocket.payloads.forEach(payload => {
-    //     if (payload.id === currentDestination){
-    //       availableRockets.push(rocket);
-    //     }
-    //   })
-    // })
     let mappedRockets = this.createRockets(availableRockets);
     return mappedRockets
   }
@@ -94,7 +89,10 @@ export class Rockets extends Component {
   clearChoices = () => {
     destinationData.forEach(destination => {
       destination.isChosen = false;
-    })
+    });
+    rocketData.forEach(rocket => {
+      rocket.isChosen = false;
+    });
   }
 
   render() {
