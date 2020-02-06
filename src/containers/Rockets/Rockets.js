@@ -12,8 +12,9 @@ export class Rockets extends Component {
     super();
     this.state = {
       destination: '',
-      distance: 0,
+      distance: '',
       rocketChoice: '',
+      cost: '',
     };
   }
 
@@ -97,14 +98,20 @@ export class Rockets extends Component {
           }
         </section>
         <section className="rocket-footer">
-          <h3 className="rocket-footer_h3">Destination:
-            {this.state.destination}
+          {(this.state.destination !== '') ?
+            <div>
+              <h3 className="rocket-footer_h3">Destination:
+                {this.state.destination}
+              </h3>
+              <h3 className="rocket-footer_h3">Average Distance: {" " + avgDistance} <span className="symbols"> miles</span>
+              </h3>
+            </div> 
+          : null}
+          <h3 className = "rocket-footer_h3">Rocket Choice:
+            {" " + this.state.rocketChoice}
           </h3>
-          <h3 className="rocket-footer_h3">Average Distance: 
-            {avgDistance}<span className="symbols"> miles</span>
-          </h3>
-          <h3 className = "rocket-footer_h3">Rocket Choice:  
-            {this.state.rocketChoice}
+          <h3 className = "rocket-footer_h3">Cost per flight:
+            {" " + this.state.rocketChoice}
           </h3>
           {(this.state.destination !== '' && this.state.rocketChoice !== '') ? <Link to='/overview'><button onClick={this.clearChoices}>Continue To Overview</button></Link> : null}
         </section>
